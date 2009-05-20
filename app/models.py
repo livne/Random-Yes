@@ -1,16 +1,17 @@
 from django.db import models
 from django.contrib.auth.models import User, UserManager
 from django.utils.translation import ugettext_lazy as _
+#from django.conf.global_settings import LANGUAGES
+from country_names import country_names
+from language_names import language_names
 
-LANGUAGE_CHOICES = (
-    ('en', 'English'),
-    ('de', 'German'),
-    ('il', 'Hebrew'),
-)
+COUNTRIES = tuple(country_names.items())
+LANGUAGES = tuple(language_names.items())
 
 class CustomUser(User):
     """User with custom settings."""
-    language = models.CharField(_('Language'), default="en", max_length=2, choices=LANGUAGE_CHOICES)
+    country = models.CharField(_('Country'), default='xx', max_length=2, choices=COUNTRIES)
+    language = models.CharField(_('Language'), default='en', max_length=5, choices=LANGUAGES)
     # Use UserManager to get the create_user method, etc.
     objects = UserManager()
 

@@ -1,3 +1,8 @@
 #!/bin/sh
 sudo apt-get install geoip-bin python-geoip
 # web server has to give REMOTE_ADDR (non default for nginx)
+
+# languages and countries:
+# http://www.mobilefish.com/tutorials/country_language_codes/countrylanguagecodes.html
+# http://www.mobilefish.com/tutorials/languagecodes/languagecodes.html
+
