@@ -1,20 +1,12 @@
 from app.models import CustomUser
-import hashlib
-
 
 class CustomUserModelBackend:
 
-    def hash(self, token):
-        m=hashlib.sha1()
-        m.update(token)
-        r = m.hexdigest()
-        return r[:30]
-
     def authenticate(self, token=None):
         try:
-            user = CustomUser.objects.get(username=self.hash(token))
+            user = CustomUser.objects.get(username=token)
         except CustomUser.DoesNotExist:
-            user = CustomUser.objects.create(username=self.hash(token))
+            user = CustomUser.objects.create(username=token)
             user.is_active = True
             user.is_staff = True
             user.is_superuser = True
