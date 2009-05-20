@@ -6,7 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^admin/(.*)', admin.site.root),
-    (r'^randomyes/', include('randomyes.app.urls')),
+    (r'^go/', include('randomyes.app.urls')),
 )
 
 
