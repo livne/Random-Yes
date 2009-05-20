@@ -7,6 +7,16 @@ from app.models import CustomUser
 from django.contrib.auth import authenticate, login
 from string import letters, digits
 from random import choice
+import GeoIP
+
+def geo_country(request):
+    try:
+        ip = request.META['REMOTE_ADDR']
+    except KeyError:
+        ip = "0.0.0.0"
+    gi = GeoIP.new(GeoIP.GEOIP_STANDARD)
+    return gi.country_code_by_addr(ip)
+    
 
 def status(request):
     if request.user.is_authenticated():
@@ -20,7 +30,8 @@ def inbox(request, token):
     if user is not None:
         if user.is_active:
             login(request, user)
-    return render_to_response('app/welcome.html', {'error_message': token}, context_instance=template.RequestContext(request))
+    country=geo_country(request)
+    return render_to_response('app/welcome.html', {'country': country}, context_instance=template.RequestContext(request))
 
 def new(request):
     token=''.join(choice(letters+digits) for i in xrange(30))

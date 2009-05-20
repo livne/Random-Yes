@@ -6,6 +6,7 @@
 {% if user %}
 <ul>user: {{ user.username|escape }}</ul>
 <ul>language: {{ user.language|escape }}</ul>
+<ul>country: {{ country|escape }}</ul>
 {% endif %}
 
 {% if error_message %}

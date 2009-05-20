@@ -1,0 +1,3 @@
+#!/bin/sh
+sudo apt-get install geoip-bin python-geoip
+# web server has to give REMOTE_ADDR (non default for nginx)
