@@ -25,7 +25,9 @@ def rylogin(request, token):
             user.country = geo_country(request)
             user.language = country_lang(user.country)
             user.save()
-    return render_to_response('app/welcome.html', {'language': language_name(user.language), 'country': country_name(user.country)}, context_instance=template.RequestContext(request))
+        return HttpResponseRedirect('/messages/')
+    else:
+        return render_to_response('app/welcome.html', {'language': language_name(user.language), 'country': country_name(user.country)}, context_instance=template.RequestContext(request))
 
 def new(request):
     token=''.join(choice(letters+digits) for i in xrange(30))
