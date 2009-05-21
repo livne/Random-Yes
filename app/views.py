@@ -42,4 +42,4 @@ def recipients(request):
     for r in recipients:
         user.recipients.add(r)
     user.save()
-    return render_to_response('app/status.html', context_instance=template.RequestContext(request))
+    return HttpResponseRedirect('/messages/compose/')

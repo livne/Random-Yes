@@ -1,5 +1,8 @@
 {% extends "messages/base.html" %} 
 {% load i18n %} 
+{% block recipients %}
+<ul>Recipients:<br>{% for recipient in user.recipients.all %}<img src="/MEDIA/img/flags/png/{{ recipient.country }}.png"/> {{ recipient }}<br>{% endfor %}</ul>
+{% endblock %}
 {% block content %} 
 <h1>{% trans "Compose Message"%}</h1>
 <form action="" method="post">
