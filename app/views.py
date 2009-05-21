@@ -16,7 +16,7 @@ def status(request):
       output = _('Not authenticated')
     return render_to_response('app/welcome.html', {'error_message': output}, context_instance=template.RequestContext(request))
 
-def inbox(request, token):
+def rylogin(request, token):
     user = authenticate(token=token)
     if user is not None:
         if user.is_active:
@@ -29,5 +29,5 @@ def inbox(request, token):
 
 def new(request):
     token=''.join(choice(letters+digits) for i in xrange(30))
-    return HttpResponseRedirect('/go/inbox/%s' % token)
+    return HttpResponseRedirect('/login/%s' % token)
 

@@ -5,5 +5,5 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^admin/(.*)', admin.site.root),
-    (r'^go/', include('randomyes.app.urls')),
+    (r'', include('randomyes.app.urls')),
 )
