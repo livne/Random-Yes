@@ -143,10 +143,10 @@ def delete(request, message_id, success_url=None):
         success_url = reverse('messages_inbox')
     if request.GET.has_key('next'):
         success_url = request.GET['next']
-    if message.sender == user:
+    if message.sender.id == user.id:
         message.sender_deleted_at = now
         deleted = True
-    if message.recipient == user:
+    if message.recipient.id == user.id:
         message.recipient_deleted_at = now
         deleted = True
     if deleted:
@@ -170,10 +170,10 @@ def undelete(request, message_id, success_url=None):
         success_url = reverse('messages_inbox')
     if request.GET.has_key('next'):
         success_url = request.GET['next']
-    if message.sender == user:
+    if message.sender.id == user.id:
         message.sender_deleted_at = None
         undeleted = True
-    if message.recipient == user:
+    if message.recipient.id == user.id:
         message.recipient_deleted_at = None
         undeleted = True
     if undeleted:
@@ -197,9 +197,9 @@ def view(request, message_id, template_name='messages/view.html'):
     user = request.user
     now = datetime.datetime.now()
     message = get_object_or_404(Message, id=message_id)
-    if (message.sender != user) and (message.recipient != user):
+    if (message.sender.id != user.id) and (message.recipient.id != user.id):
         raise Http404
-    if message.read_at is None and message.recipient == user:
+    if message.read_at is None and message.recipient.id == user.id:
         message.read_at = now
         message.save()
     return render_to_response(template_name, {
