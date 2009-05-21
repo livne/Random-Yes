@@ -7,12 +7,12 @@
 <ul>First name: {{ user.first_name }}</ul>
 <ul>Family name: {{ user.last_name }}</ul>
 <ul>Language: {{ user.language }}</ul>
-<ul>Country: {{ user.country }} <img src="/MEDIA/img/flags/png/{{ user.country|lower }}.png" alt={{ country|escape }}/></ul>
+<ul>Country: {{ user.country }} <img src="/MEDIA/img/flags/png/{{ user.country }}.png" alt={{ country }}/></ul>
 <ul>Gender: {{ user.gender }}</ul>
 <ul>Age: {{ user.age }}</ul>
 <ul>Keywords: {{ user.keywords }}</ul>
 <ul>Username: {{ user.username }}</ul>
-<ul>Recipients: {% for recipient in user.recipients.all %}{{ recipient }}, {% endfor %}</ul>
+<ul>Recipients: {% for recipient in user.recipients.all %}<img src="/MEDIA/img/flags/png/{{ recipient.country }}.png"/> {{ recipient }}, {% endfor %}</ul>
 {% endif %}
 
 {% if error_message %}
