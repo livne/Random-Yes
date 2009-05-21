@@ -8,6 +8,7 @@ from string import strip
 from random import choice, sample
 from app.models import CustomUser
 
+MAX_RECIPIENTS_AMOUNT=5
 
 def geo_country(request):
     try:
@@ -45,7 +46,7 @@ def random_user_name(country_code):
     # surname and given name
     return [choice(us[0]),choice(us[1])]
 
-def random_recipients(sender_id, amount, countries=None, language=None, gender=None, age=None, keywords=None):
+def random_recipients(sender_id, requested_amount, countries=None, language=None, gender=None, age=None, keywords=None):
     # is_active=True: login + sent once.
     # cron - after 2 days with no login set is_active False.
     # FIXME: cache user list for 10 min.
@@ -55,6 +56,6 @@ def random_recipients(sender_id, amount, countries=None, language=None, gender=N
         #FIXME: advanced query
         potential_recipients = CustomUser.objects.filter(is_active__exact=True).exclude(pk=sender_id)
     #potential_recipients.remove(sender_id).
-    n = min(amount,len(potential_recipients))
+    n = min(MAX_RECIPIENTS_AMOUNT, requested_amount, len(potential_recipients))
     return sample(potential_recipients, n)
 

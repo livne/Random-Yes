@@ -21,6 +21,7 @@ class CustomUser(User):
     age = models.IntegerField(_('Age'), null=True)
     keywords = models.CharField(_('Keywords'), max_length=120)
     recipients = models.ManyToManyField('self', related_name='senders', symmetrical=False, null=True, blank=True)
+    recipients_amount = models.IntegerField(_('Recipients amount'), default=3)
     # Use UserManager to get the create_user method, etc.
     objects = UserManager()
 

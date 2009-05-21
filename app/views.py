@@ -38,7 +38,7 @@ def recipients(request):
        HttpResponseRedirect('/')
     for r in user.recipients.all():
         user.recipients.remove(r)
-    recipients = random_recipients(user.id, 5)
+    recipients = random_recipients(user.id, user.recipients_amount)
     for r in recipients:
         user.recipients.add(r)
     user.save()

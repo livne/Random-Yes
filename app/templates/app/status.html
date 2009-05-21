@@ -12,6 +12,7 @@
 <ul>Age: {{ user.age }}</ul>
 <ul>Keywords: {{ user.keywords }}</ul>
 <ul>Username: {{ user.username }}</ul>
+<ul>Recipients amount: {{ user.recipients_amount }}</ul> 
 <ul>Recipients: {% for recipient in user.recipients.all %}<img src="/MEDIA/img/flags/png/{{ recipient.country }}.png"/> {{ recipient }}, {% endfor %}</ul>
 {% endif %}
 
