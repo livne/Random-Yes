@@ -5,6 +5,7 @@ from django import template
 from django.utils.translation import ugettext_lazy as _
 from app.models import CustomUser
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from string import letters, digits
 from random import choice
 from utils import geo_country, country_lang, language_name, country_name, random_user_name, random_recipients
@@ -43,3 +44,5 @@ def recipients(request):
         user.recipients.add(r)
     user.save()
     return HttpResponseRedirect('/messages/compose/')
+recipients = login_required(recipients)
+
