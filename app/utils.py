@@ -5,7 +5,9 @@ from country_names import country_names
 from user_names import us
 from django.utils.translation import ugettext_lazy as _
 from string import strip
-from random import choice
+from random import choice, sample
+from app.models import CustomUser
+
 
 def geo_country(request):
     try:
@@ -42,4 +44,17 @@ def language_name(language_code):
 def random_user_name(country_code):
     # surname and given name
     return [choice(us[0]),choice(us[1])]
+
+def random_recipients(sender_id, amount, countries=None, language=None, gender=None, age=None, keywords=None):
+    # is_active=True: login + sent once.
+    # cron - after 2 days with no login set is_active False.
+    # FIXME: cache user list for 10 min.
+    if not countries and language and gender and age and keywords:
+        potential_recipients = CustomUser.objects.filter(is_active__exact=True).exclude(pk=sender_id)
+    else:
+        #FIXME: advanced query
+        potential_recipients = CustomUser.objects.filter(is_active__exact=True).exclude(pk=sender_id)
+    #potential_recipients.remove(sender_id).
+    n = min(amount,len(potential_recipients))
+    return sample(potential_recipients, n)
 

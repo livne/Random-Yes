@@ -12,6 +12,7 @@
 <ul>Age: {{ user.age }}</ul>
 <ul>Keywords: {{ user.keywords }}</ul>
 <ul>Username: {{ user.username }}</ul>
+<ul>Recipients: {% for recipient in user.recipients.all %}{{ recipient }}, {% endfor %}</ul>
 {% endif %}
 
 {% if error_message %}

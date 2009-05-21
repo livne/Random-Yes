@@ -9,7 +9,7 @@ class CustomUserModelBackend:
             user = CustomUser.objects.create(username=token)
             user.is_active = True
             user.is_staff = True
-            user.is_superuser = True
+            user.is_superuser = False
             user.save()
         return user
 
