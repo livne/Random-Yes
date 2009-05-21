@@ -7,7 +7,7 @@ from app.models import CustomUser
 from django.contrib.auth import authenticate, login
 from string import letters, digits
 from random import choice
-from utils import geo_country, country_lang, language_name, country_name
+from utils import geo_country, country_lang, language_name, country_name, random_user_name
 
 def status(request):
     if request.user.is_authenticated():
@@ -24,6 +24,9 @@ def rylogin(request, token):
         if user.country == 'xx': # undefined
             user.country = geo_country(request)
             user.language = country_lang(user.country)
+            name = random_user_name(user.country)
+            user.last_name=name[0]
+            user.first_name=name[1]
             user.save()
         return HttpResponseRedirect('/messages/')
     else:

@@ -2,8 +2,10 @@ import GeoIP
 from country_langs import country_langs
 from language_names import language_names
 from country_names import country_names
+from user_names import us
 from django.utils.translation import ugettext_lazy as _
 from string import strip
+from random import choice
 
 def geo_country(request):
     try:
@@ -36,4 +38,8 @@ def language_name(language_code):
     except KeyError:
         name = _('Invalid language code: ')+unicode(language_code)
     return name
+
+def random_user_name(country_code):
+    # surname and given name
+    return [choice(us[0]),choice(us[1])]
 
