@@ -17,7 +17,6 @@ class ComposeForm(forms.Form):
     """
     A simple default form for private messages.
     """
-    recipient = CommaSeparatedUserField(label=_(u"Recipient"))
     subject = forms.CharField(label=_(u"Subject"))
     body = forms.CharField(label=_(u"Body"),
         widget=forms.Textarea(attrs={'rows': '12', 'cols':'55'}))
@@ -31,7 +30,7 @@ class ComposeForm(forms.Form):
     
                 
     def save(self, sender, parent_msg=None):
-        recipients = self.cleaned_data['recipient']
+        recipients = sender.recipients.all()
         subject = self.cleaned_data['subject']
         body = self.cleaned_data['body']
         message_list = []
