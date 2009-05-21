@@ -10,11 +10,7 @@ from random import choice
 from utils import geo_country, country_lang, language_name, country_name, random_user_name
 
 def status(request):
-    if request.user.is_authenticated():
-      output = _('Authenticated')
-    else:
-      output = _('Not authenticated')
-    return render_to_response('app/welcome.html', {'error_message': output}, context_instance=template.RequestContext(request))
+    return render_to_response('app/status.html', context_instance=template.RequestContext(request))
 
 def rylogin(request, token):
     user = authenticate(token=token)

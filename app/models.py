@@ -18,6 +18,8 @@ class CustomUser(User):
     country = models.CharField(_('Country'), default='xx', max_length=2, choices=COUNTRIES)
     language = models.CharField(_('Language'), default='en', max_length=5, choices=LANGUAGES)
     gender = models.CharField(_('Gender'), max_length=1, choices=GENDER)
+    age = models.IntegerField(_('Age'), null=True)
+    
     # Use UserManager to get the create_user method, etc.
     objects = UserManager()
 
