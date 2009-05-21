@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block greetings %}{% endblock %}
+{% block content %}
+bye! (or <a href="/new">new user?</a>)
+{% if error_message %}
+<ul>{{ error_message }}</ul>
+{% endif %}
+
+{% endblock %}
+
