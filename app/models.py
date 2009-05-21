@@ -8,10 +8,16 @@ from language_names import language_names
 COUNTRIES = tuple(country_names.items())
 LANGUAGES = tuple(language_names.items())
 
+GENDER = (
+    ('m', _('Male')),
+    ('f', _('Female')),
+)
+
 class CustomUser(User):
     """User with custom settings."""
     country = models.CharField(_('Country'), default='xx', max_length=2, choices=COUNTRIES)
     language = models.CharField(_('Language'), default='en', max_length=5, choices=LANGUAGES)
+    gender = models.CharField(_('Gender'), max_length=1, choices=GENDER)
     # Use UserManager to get the create_user method, etc.
     objects = UserManager()
 
