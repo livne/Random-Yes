@@ -1,6 +1,6 @@
-{% load i18n %}{% blocktrans with message.recipient.username as recipient and message.sender.username as sender%}Hello {{ recipient }},
+{% load i18n %}{% blocktrans with message.recipient as recipient and message.sender as sender %}Hello {{ recipient.first_name }} {{ recipient.last_name }},
 
-you received a private message from {{ sender }} with
+you received a private message from {{ sender.first_name }} {{ sender.last_name }} with
 the following contents:{% endblocktrans %}
 
 {{ message.body|safe }}

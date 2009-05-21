@@ -9,7 +9,7 @@
     <tbody>
 {% for message in message_list %} 
     <tr>
-        <td>{{ message.sender }}</td>
+        <td>{{ message.sender.first_name }} {{ message.sender.last_name }}</td>
         <td> 
         {{ message.subject }}
         </td>
