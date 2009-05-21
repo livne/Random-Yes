@@ -24,6 +24,7 @@ def inbox(request, token):
         if user.country == 'xx': # undefined
             user.country = geo_country(request)
             user.language = country_lang(user.country)
+            user.save()
     return render_to_response('app/welcome.html', {'language': language_name(user.language), 'country': country_name(user.country)}, context_instance=template.RequestContext(request))
 
 def new(request):

@@ -11,21 +11,21 @@ def geo_country(request):
     except KeyError:
         ip = "0.0.0.0"
     gi = GeoIP.new(GeoIP.GEOIP_STANDARD)
-    return gi.country_code_by_addr(ip)
+    return gi.country_code_by_addr(ip).lower()
 
 def country_lang(country_code):
     return country_all_langs(country_code).split(';')[0] # take the first language
 
 def country_all_langs(country_code):
     try:
-        langs = country_langs[country_code.lower()]
+        langs = country_langs[country_code]
     except KeyError:
         langs = 'en'
     return langs
 
 def country_name(country_code):
     try:
-        name = country_names[country_code.lower()]
+        name = country_names[country_code]
     except KeyError:
         name = _('Invalid country code: ')+unicode(country_code)
     return name
