@@ -10,6 +10,9 @@ from string import letters, digits
 from random import choice
 from utils import geo_country, country_lang, language_name, country_name, random_user_name, random_recipients
 
+def welcome(request):
+    return render_to_response('app/welcome.html', context_instance=template.RequestContext(request))
+
 def status(request):
     return render_to_response('app/status.html', context_instance=template.RequestContext(request))
 
@@ -27,7 +30,7 @@ def rylogin(request, token):
             user.save()
         return HttpResponseRedirect('/messages/')
     else:
-        return render_to_response('app/welcome.html', {'language': language_name(user.language), 'country': country_name(user.country)}, context_instance=template.RequestContext(request))
+        return HttpResponseRedirect('/welcome/')
 
 def new(request):
     token=''.join(choice(letters+digits) for i in xrange(30))
