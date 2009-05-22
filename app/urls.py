@@ -8,5 +8,6 @@ urlpatterns = patterns('',
     (r'^recipients/$', 'randomyes.app.views.recipients'),
     (r'^preferences/$', 'randomyes.app.views.preferences'),
     (r'^welcome/$', 'randomyes.app.views.welcome'),
+    (r'^debug/$', 'randomyes.app.views.debug'),
 )
 
