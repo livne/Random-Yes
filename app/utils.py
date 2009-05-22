@@ -7,6 +7,7 @@ from django.utils.translation import ugettext_lazy as _
 from string import strip
 from random import choice, sample
 from app.models import CustomUser
+from app.country_names import country_names
 
 MAX_RECIPIENTS_AMOUNT=5
 
@@ -58,4 +59,22 @@ def random_recipients(sender_id, requested_amount, countries=None, language=None
     #potential_recipients.remove(sender_id).
     n = min(MAX_RECIPIENTS_AMOUNT, requested_amount, len(potential_recipients))
     return sample(potential_recipients, n)
+
+def initial_subject(user):
+    return 'Hello from ' + country_names[user.country]
+
+def initial_body(user):
+    body = 'I would like to talk to you. '
+    body += 'Few details about me: I am '
+    if user.gender:
+        if user.gender is 'f':
+            gender = 'female'
+        else:
+            gender = 'male'
+        body += 'a ' + gender + ', '
+    if user.age:
+        body += str(user.age) + ' years old, '
+    body += 'from ' + country_names[user.country]
+    body += 'and I would be happy to learn few things about you.'
+    return body
 

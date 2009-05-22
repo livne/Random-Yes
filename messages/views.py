@@ -13,6 +13,8 @@ from messages.models import Message
 from messages.forms import ComposeForm
 from messages.utils import format_quote
 
+from app.utils import initial_subject, initial_body
+
 if "notification" in settings.INSTALLED_APPS:
     from notification import models as notification
 else:
@@ -86,9 +88,7 @@ def compose(request, recipient=None, form_class=ComposeForm,
             return HttpResponseRedirect(success_url)
     else:
         if request.user.karma == 0:
-            initial_subject = 'suggested subject'
-            initial_body = 'suggested body'
-            form = form_class(initial={'subject': initial_subject, 'body': initial_body})
+            form = form_class(initial={'subject': initial_subject(request.user), 'body': initial_body(request.user)})
         else:
             form = form_class()
         if recipient is not None:
