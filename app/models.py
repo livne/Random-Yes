@@ -4,6 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 #from django.conf.global_settings import LANGUAGES
 from country_names import country_names
 from language_names import language_names
+from django.forms import ModelForm
 
 COUNTRIES = tuple(country_names.items())
 LANGUAGES = tuple(language_names.items())
@@ -17,9 +18,9 @@ class CustomUser(User):
     """User with custom settings."""
     country = models.CharField(_('Country'), default='xx', max_length=2, choices=COUNTRIES)
     language = models.CharField(_('Language'), default='en', max_length=5, choices=LANGUAGES)
-    gender = models.CharField(_('Gender'), max_length=1, choices=GENDER)
-    age = models.IntegerField(_('Age'), null=True)
-    keywords = models.CharField(_('Keywords'), max_length=120)
+    gender = models.CharField(_('Gender'), blank=True, max_length=1, choices=GENDER)
+    age = models.IntegerField(_('Age'), null=True, blank=True)
+    keywords = models.CharField(_('Keywords'), blank=True, max_length=120)
     recipients = models.ManyToManyField('self', related_name='senders', symmetrical=False, null=True, blank=True)
     recipients_amount = models.IntegerField(_('Recipients amount'), default=3)
     # Use UserManager to get the create_user method, etc.
@@ -39,3 +40,10 @@ class CustomUser(User):
     #is_superuser - IGNORE
     #last_login - A datetime of the user's last login.
     #date_joined - A datetime designating when the account was created.
+
+class PreferencesForm(ModelForm):
+    class Meta:
+        model = CustomUser
+        #fields = ('first_name', 'last_name', 'email', 'country', 'language', 'gender', 'age', 'keywords', 'recipient_amount')
+        exclude = ('username', 'password', 'is_staff', 'is_active', 'is_superuser', 'last_login', 'date_joined',  'groups', 'user_permissions', 'recipients')
+

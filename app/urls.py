@@ -6,5 +6,6 @@ urlpatterns = patterns('',
     (r'^logout/$', 'django.contrib.auth.views.logout', {'template_name': 'app/logout.html'}),
     (r'^new/$', 'randomyes.app.views.new'),
     (r'^recipients/$', 'randomyes.app.views.recipients'),
+    (r'^preferences/$', 'randomyes.app.views.preferences'),
 )
 

@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from app.auth_backends import CustomUserModelBackend 
 from django import template
 from django.utils.translation import ugettext_lazy as _
-from app.models import CustomUser
+from app.models import CustomUser, PreferencesForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from string import letters, digits
@@ -45,4 +45,11 @@ def recipients(request):
     user.save()
     return HttpResponseRedirect('/messages/compose/')
 recipients = login_required(recipients)
+
+def preferences(request):
+    user = request.user
+    form = PreferencesForm(data=request.POST or None, instance=user)
+    if form.is_valid():
+        form.save()
+    return render_to_response('app/preferences.html', {'form': form}, context_instance=template.RequestContext(request))
 
