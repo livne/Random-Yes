@@ -32,7 +32,7 @@ def rylogin(request, token):
             user.first_name=name[1]
             user.is_active=True
             user.save()
-        return HttpResponseRedirect('/messages/')
+        return recipients(request)
     else:
         return HttpResponseRedirect('/welcome/')
 
@@ -50,7 +50,11 @@ def recipients(request):
     for r in recipients:
         user.recipients.add(r)
     user.save()
-    return HttpResponseRedirect('/messages/compose/')
+    try:
+        next = request.META['HTTP_REFERER']
+    except:
+        next = '/messages/inbox/'
+    return HttpResponseRedirect(next)
 recipients = login_required(recipients)
 
 def preferences(request):
