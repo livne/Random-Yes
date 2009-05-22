@@ -195,6 +195,21 @@ def undelete(request, message_id, success_url=None):
     raise Http404
 undelete = login_required(undelete)
 
+def publish(request, message_id):
+    """
+    Declares the message as public. ``message_id`` argument is required.
+    No reverse.
+    """
+    user = request.user
+    message = get_object_or_404(Message, id=message_id)
+    if (message.sender.id != user.id) and (message.recipient.id != user.id):
+        raise Http404
+    if message.public == False:
+        message.public = True
+        message.save()
+    return view(request, message_id)
+publish = login_required(publish)
+
 def view(request, message_id, template_name='messages/view.html'):
     """
     Shows a single message.``message_id`` argument is required.
@@ -207,12 +222,13 @@ def view(request, message_id, template_name='messages/view.html'):
     user = request.user
     now = datetime.datetime.now()
     message = get_object_or_404(Message, id=message_id)
-    if (message.sender.id != user.id) and (message.recipient.id != user.id):
+    if (message.public != True) and (message.sender.id != user.id) and (message.recipient.id != user.id):
         raise Http404
     if message.read_at is None and message.recipient.id == user.id:
         message.read_at = now
         message.save()
     return render_to_response(template_name, {
         'message': message,
+        'allow_delete': (message.sender.id == user.id) or (message.recipient.id == user.id),
     }, context_instance=RequestContext(request))
 view = login_required(view)

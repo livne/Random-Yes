@@ -20,5 +20,12 @@
 {% ifequal message.recipient.id user.id %}
 <a href="{% url messages_reply message.id %}">{% trans "Reply" %}</a>
 {% endifequal %}
+{% if message.public %}
+{% trans "Public" %}
+{% else %}
+<a href="/messages/publish/{{ message.id }}">{% trans "Publish" %}</a>
+{% endif %}
+{% if allow_delete %}
 <a href="{% url messages_delete message.id %}">{% trans "Delete" %}</a>
+{% endif %}
 {% endblock %}
