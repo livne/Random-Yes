@@ -1,5 +1,8 @@
 {% extends "messages/base.html" %} 
 {% load i18n %} 
+{% block title %}
+{% trans "Deleted Messages" %}
+{% endblock %}
 {% block content %} 
 <h1>{% trans "Deleted Messages" %}</h1>
 <table class="messages">

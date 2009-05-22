@@ -1,5 +1,8 @@
 {% extends "messages/base.html" %} 
 {% load i18n %} 
+{% block title %}
+{% trans "View Message" %}
+{% endblock %}
 {% block content %}
 <h1>{% trans "View Message" %}</h1>
 <dl class="message-headers">
