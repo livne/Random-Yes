@@ -5,6 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 from country_names import country_names
 from language_names import language_names
 from django.forms import ModelForm
+from django import forms
 
 COUNTRIES = tuple(country_names.items())
 LANGUAGES = tuple(language_names.items())
@@ -48,4 +49,17 @@ class PreferencesForm(ModelForm):
         model = CustomUser
         exclude = ('username', 'password', 'is_staff', 'is_active', 'is_superuser', 'last_login', 'date_joined', 'groups', \
                    'user_permissions', 'recipients', 'karma')
+
+    def clean_age(self):
+        data = self.cleaned_data['age']
+        if data < 1 or data > 120:
+            raise forms.ValidationError(_("Age must be positive and not more than 120"))
+        return data
+
+    def clean_recipients_amount(self):
+        data = self.cleaned_data['recipients_amount']
+        if data < 1 or data > 5:
+            raise forms.ValidationError(_("Recipients amount must be between 1 and 5"))
+        return data
+
 
