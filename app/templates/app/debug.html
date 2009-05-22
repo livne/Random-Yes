@@ -6,7 +6,7 @@
 {% if users %}
 <h1>Users List</h1>
 {% for u in users.all %}
-<ul><img src="/MEDIA/img/flags/png/{{ u.country }}.png" alt={{ u.country }}/> <a href="/login/{{ u.username }}">{{ u }}</a></ul>
+<ul><img src="/MEDIA/img/flags/png/{{ u.country }}.png" alt={{ u.country }}/> ({{ u.karma }}) <a href="/login/{{ u.username }}">{{ u }}</a></ul>
 {% endfor %}
 {% else %}
 <h1>No Users</h1>

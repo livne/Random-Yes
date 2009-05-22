@@ -23,6 +23,7 @@ class CustomUser(User):
     keywords = models.CharField(_('Keywords'), blank=True, max_length=120, help_text=_("Comma separated words, for others to search"))
     recipients = models.ManyToManyField('self', related_name='senders', symmetrical=False, null=True, blank=True)
     recipients_amount = models.IntegerField(_('Recipients amount'), default=3, help_text=_("Number of recipients for each message."))
+    karma = models.IntegerField(_('Karma'), default=0)
     # Use UserManager to get the create_user method, etc.
     objects = UserManager()
 
@@ -44,6 +45,6 @@ class CustomUser(User):
 class PreferencesForm(ModelForm):
     class Meta:
         model = CustomUser
-        #fields = ('first_name', 'last_name', 'email', 'country', 'language', 'gender', 'age', 'keywords', 'recipient_amount')
-        exclude = ('username', 'password', 'is_staff', 'is_active', 'is_superuser', 'last_login', 'date_joined',  'groups', 'user_permissions', 'recipients')
+        exclude = ('username', 'password', 'is_staff', 'is_active', 'is_superuser', 'last_login', 'date_joined', 'groups', \
+                   'user_permissions', 'recipients', 'karma')
 
