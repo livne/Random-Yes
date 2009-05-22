@@ -52,4 +52,5 @@ def preferences(request):
     if form.is_valid():
         form.save()
     return render_to_response('app/preferences.html', {'form': form}, context_instance=template.RequestContext(request))
+preferences = login_required(preferences)
 
