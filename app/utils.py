@@ -51,13 +51,12 @@ def random_recipients(sender_id, requested_amount, countries=None, language=None
     # is_active=True: login + sent once.
     # cron - after 2 days with no login set is_active False.
     # FIXME: cache user list for 10 min.
-    if not countries and language and gender and age and keywords:
+    potential_recipients = CustomUser.objects.filter(is_active__exact=True).exclude(pk=sender_id).exclude(karma=0)
+    potential_group_size=len(potential_recipients)
+    if potential_group_size == 0:
         potential_recipients = CustomUser.objects.filter(is_active__exact=True).exclude(pk=sender_id)
-    else:
-        #FIXME: advanced query
-        potential_recipients = CustomUser.objects.filter(is_active__exact=True).exclude(pk=sender_id)
-    #potential_recipients.remove(sender_id).
-    n = min(MAX_RECIPIENTS_AMOUNT, requested_amount, len(potential_recipients))
+        potential_group_size=len(potential_recipients)
+    n = min(MAX_RECIPIENTS_AMOUNT, requested_amount, potential_group_size)
     return sample(potential_recipients, n)
 
 def initial_subject(user):
