@@ -23,6 +23,7 @@ class CustomUser(User):
     keywords = models.CharField(_('Keywords'), blank=True, max_length=120, help_text=_("Comma separated words, for others to search"))
     recipients = models.ManyToManyField('self', related_name='senders', symmetrical=False, null=True, blank=True)
     recipients_amount = models.IntegerField(_('Recipients amount'), default=3, help_text=_("Number of recipients for each message."))
+    suggest_message = models.BooleanField(_('Suggest message'), default=False, help_text=_("Always use automatic message composition."))
     karma = models.IntegerField(_('Karma'), default=0)
     # Use UserManager to get the create_user method, etc.
     objects = UserManager()

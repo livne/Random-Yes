@@ -87,7 +87,7 @@ def compose(request, recipient=None, form_class=ComposeForm,
                 success_url = request.GET['next']
             return HttpResponseRedirect(success_url)
     else:
-        if request.user.karma == 0:
+        if request.user.suggest_message == True or request.user.karma == 0:
             form = form_class(initial={'subject': initial_subject(request.user), 'body': initial_body(request.user)})
         else:
             form = form_class()
