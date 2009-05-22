@@ -1,7 +1,7 @@
 {% extends "messages/base.html" %} 
 {% load i18n %} 
 {% block recipients %}
-<ul>Recipients <a href="/recipients/"><img src="/MEDIA/img/actions/png/reload.png" width="16" height="16" border="0"></a><br>{% for recipient in user.recipients.all %}<img src="/MEDIA/img/flags/png/{{ recipient.country }}.png"/> <small>({{recipient.karma}})</small> {{ recipient }}<br>{% endfor %}</ul>
+<ul>Recipients <a href="/recipients/"><img src="/MEDIA/img/actions/png/reload.png" width="16" height="16" border="0" title="Update recipients" alt="update"></a><br>{% for recipient in user.recipients.all %}<img src="/MEDIA/img/flags/png/{{ recipient.country }}.png"/> <small>({{recipient.karma}})</small> {{ recipient }}<br>{% endfor %}</ul>
 {% endblock %}
 {% block content %} 
 <h1>{% trans "Compose Message"%}</h1>
