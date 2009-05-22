@@ -4,7 +4,7 @@ from app.auth_backends import CustomUserModelBackend
 from django import template
 from django.utils.translation import ugettext_lazy as _
 from app.models import CustomUser, PreferencesForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from string import letters, digits
 from random import choice
@@ -32,28 +32,31 @@ def rylogin(request, token):
             user.first_name=name[1]
             user.is_active=True
             user.save()
-        return recipients(request)
+        return recipients(request, '/messages/inbox')
     else:
         return HttpResponseRedirect('/welcome/')
+
+def rylogout(request):
+    logout(request)
+    return HttpResponseRedirect('/welcome/')
 
 def new(request):
     token=''.join(choice(letters+digits) for i in xrange(30))
     return HttpResponseRedirect('/login/%s' % token)
 
-def recipients(request):
+def recipients(request, next=None):
     user = request.user 
-    if not user.is_authenticated():
-       HttpResponseRedirect('/')
     for r in user.recipients.all():
         user.recipients.remove(r)
     recipients = random_recipients(user.id, user.recipients_amount)
     for r in recipients:
         user.recipients.add(r)
     user.save()
-    try:
-        next = request.META['HTTP_REFERER']
-    except:
-        next = '/messages/inbox/'
+    if next is None:
+        try:
+            next = request.META['HTTP_REFERER']
+        except:
+            next = '/messages/inbox/'
     return HttpResponseRedirect(next)
 recipients = login_required(recipients)
 
