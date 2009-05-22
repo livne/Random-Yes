@@ -30,7 +30,10 @@ class ComposeForm(forms.Form):
     
                 
     def save(self, sender, parent_msg=None):
-        recipients = sender.recipients.all()
+        if parent_msg is None:
+            recipients = sender.recipients.all()
+        else:
+            recipients = [parent_msg.sender]
         subject = self.cleaned_data['subject']
         body = self.cleaned_data['body']
         message_list = []
