@@ -63,7 +63,8 @@ def initial_subject(user):
     return 'Hello from ' + country_names[user.country]
 
 def initial_body(user):
-    body = 'I would like to talk to you. '
+    body = 'Hi! My name is ' + user.first_name + '. '
+    body += 'I would like that we write to each other. '
     body += 'Few details about me: I am '
     if user.gender:
         if user.gender is 'f':
