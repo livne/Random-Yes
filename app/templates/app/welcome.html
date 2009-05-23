@@ -7,12 +7,12 @@
 {% endblock %}
 
 {% block content %}
-<h1>Welcome to Random Yes!</h1>
+<h1>{% trans "Welcome to Random Yes!" %}</h1>
 {%if user %}
 {%if user.username %}
-<ul>Login as <a href="/messages/inbox/">{{ user }}</a></ul>
+<ul>{% trans "Login as" %} <a href="/messages/inbox/">{{ user }}</a></ul>
 {% endif %}
 {% endif %}
-<ul>Login as <a href="/new/">New User</a></ul>
+<ul>{% trans "Login as" %} <a href="/new/">{% trans "New User" %}</a></ul>
 {% endblock %}
 

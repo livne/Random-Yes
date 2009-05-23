@@ -1,3 +1,4 @@
+{% load i18n %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="{{ LANGUAGE_CODE }}" xml:lang="{{ LANGUAGE_CODE }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
 <head>
@@ -13,13 +14,13 @@
     {% block content_title %}{% endblock %}
     {% block greetings %}
     {% if user %}
-    <a href="/preferences/"><img src="/MEDIA/img/flags/png/{{ user.country }}.png" alt="{{ user.country }}" border="0" title="Update preferences"/></a> 
+    <a href="/preferences/"><img src="/MEDIA/img/flags/png/{{ user.country }}.png" alt="{{ user.country }}" border="0" title="{% trans "Update preferences" %}"/></a> 
     <small>({{ user.karma }})</small>
-    Hi, {{ user.first_name }}!
-    <a href="/preferences/">Preferences</a>
-    <a href="/messages/compose/">Compose</a>
-    <a href="/messages/">My messages</a>
-    <a href="/logout/">Logout</a>
+    {% trans "Hi," %} {{ user.first_name }}!
+    <a href="/preferences/">{% trans "Preferences" %}</a>
+    <a href="/messages/compose/">{% trans "Compose" %}</a>
+    <a href="/messages/">{% trans "My Messages" %}</a>
+    <a href="/logout/">{% trans "Logout" %}</a>
     {% endif %}
     {% endblock %}
     {% block recipients %}
