@@ -6,9 +6,12 @@ from country_names import country_names
 from language_names import language_names
 from django.forms import ModelForm
 from django import forms
+from operator import itemgetter
 
-COUNTRIES = tuple(country_names.items())
-LANGUAGES = tuple(language_names.items())
+countries=sorted(country_names.items(), key=itemgetter(1))
+langs=sorted(language_names.items(), key=itemgetter(1))
+country_choices = tuple(countries)
+language_choices = tuple(langs)
 
 GENDER = (
     ('m', _('Male')),
@@ -17,11 +20,11 @@ GENDER = (
 
 class CustomUser(User):
     """User with custom settings."""
-    country = models.CharField(_('Country'), default='xx', max_length=2, choices=COUNTRIES, help_text=_("Your country."))
-    language = models.CharField(_('Language'), default='en', max_length=5, choices=LANGUAGES, help_text=_("Interface language."))
-    gender = models.CharField(_('Gender'), blank=True, max_length=1, choices=GENDER, help_text=_("Enable gender search filter for others"))
-    age = models.IntegerField(_('Age'), null=True, blank=True, help_text=_("Enable age search filter for others"))
-    keywords = models.CharField(_('Keywords'), blank=True, max_length=120, help_text=_("Comma separated words, for others to search"))
+    country = models.CharField(_('Country'), default='xx', max_length=2)
+    language = models.CharField(_('Language'), default='en', max_length=5, help_text=_("Interface language."))
+    gender = models.CharField(_('Gender'), blank=True, max_length=1, choices=GENDER)
+    age = models.IntegerField(_('Age'), null=True, blank=True)
+    keywords = models.CharField(_('Keywords'), blank=True, max_length=120, help_text=_("Comma separated words"))
     recipients = models.ManyToManyField('self', related_name='senders', symmetrical=False, null=True, blank=True)
     recipients_amount = models.IntegerField(_('Recipients amount'), default=3, help_text=_("Number of recipients for each message."))
     suggest_message = models.BooleanField(_('Suggest message'), default=False, help_text=_("Always use automatic message composition."))
@@ -47,6 +50,9 @@ class CustomUser(User):
     #date_joined - A datetime designating when the account was created.
 
 class PreferencesForm(ModelForm):
+    country = forms.ChoiceField(required=True, label='Country', choices=country_choices)
+    language = forms.ChoiceField(required=True, label='Language', choices=language_choices)
+
     class Meta:
         model = CustomUser
         exclude = ('username', 'password', 'is_staff', 'is_active', 'is_superuser', 'last_login', 'date_joined', 'groups', \
