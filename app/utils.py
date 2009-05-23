@@ -20,7 +20,7 @@ def geo_country(request):
     return gi.country_code_by_addr(ip).lower()
 
 def country_lang(country_code):
-    return country_all_langs(country_code).split(';')[0] # take the first language
+    return country_all_langs(country_code).split(';')[0].strip() # take the first language
 
 def country_all_langs(country_code):
     try:
