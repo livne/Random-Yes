@@ -54,8 +54,9 @@ class PreferencesForm(ModelForm):
 
     def clean_age(self):
         data = self.cleaned_data['age']
-        if data < 1 or data > 120:
-            raise forms.ValidationError(_("Age must be positive and not more than 120"))
+        if data:
+            if data < 1 or data > 120:
+                raise forms.ValidationError(_("Age must be positive and not more than 120"))
         return data
 
     def clean_recipients_amount(self):
