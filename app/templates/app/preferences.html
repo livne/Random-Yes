@@ -4,8 +4,13 @@
 {% trans "Preferences" %}
 {% endblock %}
 {% block content %}
+<h1>
+{% trans "Preferences" %}
+</h1>
 <form action="/preferences/" method="POST">
-{{ form.as_p }}
+<table>
+{{ form.as_table }}
+</table>
 <input type="submit" value="Submit" />
 </form>
 {% endblock %}
