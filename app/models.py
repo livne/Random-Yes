@@ -26,6 +26,8 @@ class CustomUser(User):
     recipients_amount = models.IntegerField(_('Recipients amount'), default=3, help_text=_("Number of recipients for each message."))
     suggest_message = models.BooleanField(_('Suggest message'), default=False, help_text=_("Always use automatic message composition."))
     karma = models.IntegerField(_('Karma'), default=0)
+    first_ip = models.IPAddressField(_('First IP Address'), null=True, blank=True)
+    first_client = models.CharField(_('First client'), null=True, blank=True, max_length=120)
     # Use UserManager to get the create_user method, etc.
     objects = UserManager()
 
@@ -48,7 +50,7 @@ class PreferencesForm(ModelForm):
     class Meta:
         model = CustomUser
         exclude = ('username', 'password', 'is_staff', 'is_active', 'is_superuser', 'last_login', 'date_joined', 'groups', \
-                   'user_permissions', 'recipients', 'karma')
+                   'user_permissions', 'recipients', 'karma', 'first_ip', 'first_client')
 
     def clean_age(self):
         data = self.cleaned_data['age']

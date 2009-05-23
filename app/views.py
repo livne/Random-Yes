@@ -31,6 +31,14 @@ def rylogin(request, token):
             user.last_name=name[0]
             user.first_name=name[1]
             user.is_active=True
+            try:
+                user.first_ip=request.META['REMOTE_ADDR']
+            except:
+                pass
+            try:
+                user.first_client=request.META['HTTP_USER_AGENT']
+            except:
+                pass
             user.save()
         return recipients(request, '/messages/inbox')
     else:
