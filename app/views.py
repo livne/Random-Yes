@@ -33,11 +33,11 @@ def rylogin(request, token):
             user.is_active=True
             try:
                 user.first_ip=request.META['REMOTE_ADDR']
-            except:
+            except KeyError:
                 pass
             try:
                 user.first_client=request.META['HTTP_USER_AGENT']
-            except:
+            except KeyError:
                 pass
             user.save()
         return recipients(request, '/messages/inbox')
@@ -63,7 +63,7 @@ def recipients(request, next=None):
     if next is None:
         try:
             next = request.META['HTTP_REFERER']
-        except:
+        except KeyError:
             next = '/messages/inbox/'
     return HttpResponseRedirect(next)
 recipients = login_required(recipients)
