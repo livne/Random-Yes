@@ -71,10 +71,13 @@ recipients = login_required(recipients)
 
 def preferences(request):
     user = request.user
+    prev_language = user.language
     form = PreferencesForm(data=request.POST or None, instance=user)
     if form.is_valid():
         form.save()
-        request.session['django_language']=user.language
+        if prev_language != user.language:
+            request.session['django_language']=user.language
+            return HttpResponseRedirect('/preferences/')
     return render_to_response('app/preferences.html', {'form': form}, context_instance=template.RequestContext(request))
 preferences = login_required(preferences)
 
