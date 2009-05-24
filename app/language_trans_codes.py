@@ -63,7 +63,7 @@ language_trans_codes = {
 'gu':'gu',
 'ht':'ht',
 'ha':'ha',
-'he':'he',
+'he':'iw',
 'hz':'hz',
 'hi':'hi',
 'ho':'ho',
