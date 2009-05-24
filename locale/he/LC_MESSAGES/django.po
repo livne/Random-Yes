@@ -1,0 +1,449 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-05-23 19:35+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: app/models.py:17
+msgid "Male"
+msgstr "גבר"
+
+#: app/models.py:18
+msgid "Female"
+msgstr "אישה"
+
+#: app/models.py:23 app/models.py:53
+msgid "Country"
+msgstr "מדינה"
+
+#: app/models.py:24 app/models.py:54
+msgid "Language"
+msgstr "שפה"
+
+#: app/models.py:24
+msgid "Interface language."
+msgstr "שפת ממשק."
+
+#: app/models.py:25
+msgid "Gender"
+msgstr "מגדר"
+
+#: app/models.py:26
+msgid "Age"
+msgstr "גיל"
+
+#: app/models.py:27
+msgid "Keywords"
+msgstr "מילות מפתח"
+
+#: app/models.py:27
+msgid "Comma separated words"
+msgstr "מילים מופרדות בפסיק"
+
+#: app/models.py:29
+msgid "Recipients amount"
+msgstr "מספר נמענים"
+
+#: app/models.py:29
+msgid "Number of recipients for each message."
+msgstr "מספר הנמענים לכל הודעה"
+
+#: app/models.py:30
+msgid "Suggest message"
+msgstr "כתבן אוטומטי"
+
+#: app/models.py:30
+msgid "Always use automatic message composition."
+msgstr "השתמש תמיד באפשרות כתבן הודעה אוטומטי"
+
+#: app/models.py:31
+msgid "Karma"
+msgstr "קארמה"
+
+#: app/models.py:32
+msgid "First IP Address"
+msgstr "כתובת יצירת חשבון"
+
+#: app/models.py:33
+msgid "First client"
+msgstr "דפדפן ראשון"
+
+#: app/models.py:65
+msgid "Age must be positive and not more than 120"
+msgstr "גיל מותר בין 1 ל 120"
+
+#: app/models.py:71
+msgid "Recipients amount must be between 1 and 5"
+msgstr "מספר נמענים מותר בין 1 ל 5"
+
+#: app/utils.py:36
+msgid "Invalid country code: "
+msgstr "קוד מדינה לא חוקי"
+
+#: app/utils.py:43
+msgid "Invalid language code: "
+msgstr "קוד שפה לא חוקי"
+
+#: app/templates/base.html:17
+msgid "Update preferences"
+msgstr "עדכן העדפות"
+
+#: app/templates/base.html:19
+msgid "Hi,"
+msgstr "שלום,"
+
+#: app/templates/base.html:20 app/templates/app/preferences.html:4
+#: app/templates/app/preferences.html:8
+msgid "Preferences"
+msgstr "העדפות"
+
+#: app/templates/base.html:21
+msgid "Compose"
+msgstr "כתוב"
+
+#: app/templates/base.html:22
+msgid "My Messages"
+msgstr "הודעות"
+
+#: app/templates/base.html:23
+msgid "Logout"
+msgstr "ביי"
+
+#: app/templates/app/debug.html:4
+msgid "Debug"
+msgstr ""
+
+#: app/templates/app/welcome.html:4 app/templates/app/welcome.html.py:10
+msgid "Welcome to Random Yes!"
+msgstr "ברוכים הבאים לרנדום כן"
+
+#: app/templates/app/welcome.html:13 app/templates/app/welcome.html.py:16
+msgid "Login as"
+msgstr "התחבר כמשתמש"
+
+#: app/templates/app/welcome.html:16
+msgid "New User"
+msgstr "חדש"
+
+#: messages/admin.py:13 messages/models.py:52
+#: messages/templates/messages/outbox.html:10
+#: messages/templates/messages/view.html:15
+msgid "Recipient"
+msgstr "נמען"
+
+#: messages/admin.py:15
+msgid "group"
+msgstr ""
+
+#: messages/admin.py:16
+msgid "Creates the message optionally for all users or a group of users."
+msgstr ""
+
+#: messages/admin.py:23
+msgid "All users"
+msgstr ""
+
+#: messages/admin.py:38 messages/models.py:89
+msgid "Message"
+msgstr "הודעה"
+
+#: messages/admin.py:45
+msgid "Date/time"
+msgstr "תאריך/זמן"
+
+#: messages/fields.py:53
+#, python-format
+msgid "The following usernames are incorrect: %(users)s"
+msgstr ""
+
+#: messages/forms.py:20 messages/models.py:49
+#: messages/templates/messages/inbox.html:10
+#: messages/templates/messages/outbox.html:10
+#: messages/templates/messages/trash.html:10
+#: messages/templates/messages/view.html:9
+msgid "Subject"
+msgstr "נושא"
+
+#: messages/forms.py:21 messages/models.py:50
+msgid "Body"
+msgstr "תוכן"
+
+#: messages/management.py:9
+msgid "Message Received"
+msgstr "הודעה נתקבלה"
+
+#: messages/management.py:9
+msgid "you have received a message"
+msgstr "קיבלת הודעה"
+
+#: messages/management.py:10
+msgid "Message Sent"
+msgstr "הודעה נשלחה"
+
+#: messages/management.py:10
+msgid "you have sent a message"
+msgstr "שלחת הודעה"
+
+#: messages/management.py:11
+msgid "Message Replied"
+msgstr "הודעה נענתה"
+
+#: messages/management.py:11
+msgid "you have replied to a message"
+msgstr "ענית להודעה"
+
+#: messages/management.py:12
+msgid "Reply Received"
+msgstr "תשובה נתקבלה"
+
+#: messages/management.py:12
+msgid "you have received a reply to a message"
+msgstr "קיבלת תשובה להודעה"
+
+#: messages/management.py:13
+msgid "Message Deleted"
+msgstr "הודעה נמחקה"
+
+#: messages/management.py:13
+msgid "you have deleted a message"
+msgstr "מחקת הודעה"
+
+#: messages/management.py:14
+msgid "Message Recovered"
+msgstr "הודעה שוחזרה"
+
+#: messages/management.py:14
+msgid "you have undelete a message"
+msgstr "שיחזרת הודעה"
+
+#: messages/models.py:51 messages/templates/messages/inbox.html:10
+#: messages/templates/messages/trash.html:10
+#: messages/templates/messages/view.html:11
+msgid "Sender"
+msgstr "שולח"
+
+#: messages/models.py:53
+msgid "Parent message"
+msgstr "הודעת אם"
+
+#: messages/models.py:54
+msgid "sent at"
+msgstr "נשלחה"
+
+#: messages/models.py:55
+msgid "read at"
+msgstr "נקראה"
+
+#: messages/models.py:56
+msgid "replied at"
+msgstr "נענתה"
+
+#: messages/models.py:57
+msgid "Sender deleted at"
+msgstr "שולח מחק"
+
+#: messages/models.py:58
+msgid "Recipient deleted at"
+msgstr "נמען מחק"
+
+#: messages/models.py:59
+msgid "Made public"
+msgstr "פורסמה"
+
+#: messages/models.py:90
+msgid "Messages"
+msgstr "הודעות"
+
+#: messages/utils.py:27
+#, python-format
+msgid "New Message: %(subject)s"
+msgstr "הודעה חדשה: %(subject)s"
+
+#: messages/views.py:83 messages/views.py:118
+msgid "Message successfully sent."
+msgstr "הודעה נשלחה בהצלחה"
+
+#: messages/views.py:124
+#, python-format
+msgid ""
+"%(sender)s wrote:\n"
+"%(body)s"
+msgstr ""
+"%(sender)s כתב:\n"
+"%(body)s"
+
+#: messages/views.py:128
+#, python-format
+msgid "Re: %(subject)s"
+msgstr ""
+
+#: messages/views.py:164
+msgid "Message successfully deleted."
+msgstr "הודעה נמחקה בהצלחה"
+
+#: messages/views.py:191
+msgid "Message successfully recovered."
+msgstr "הודעה שוחזרה בהצלחה"
+
+#: messages/templates/messages/base.html:8
+#: messages/templates/messages/inbox.html:4
+#: messages/templates/messages/inbox.html:7
+#: messages/templates/messages/new_message.html:10
+msgid "Inbox"
+msgstr "הודעות נכנסות"
+
+#: messages/templates/messages/base.html:9
+#: messages/templates/messages/outbox.html:4
+#: messages/templates/messages/outbox.html:7
+msgid "Sent Messages"
+msgstr "הודעות יוצאות"
+
+#: messages/templates/messages/base.html:10
+msgid "New Message"
+msgstr "הודעה חדשה"
+
+#: messages/templates/messages/base.html:11
+msgid "Trash"
+msgstr "אשפה"
+
+#: messages/templates/messages/compose.html:4
+#: messages/templates/messages/compose.html:8
+msgid "Compose Message"
+msgstr "כתוב הודעה"
+
+#: messages/templates/messages/compose.html:16
+msgid "Send"
+msgstr "שלח"
+
+#: messages/templates/messages/inbox.html:10
+msgid "Received"
+msgstr "נתקבלה"
+
+#: messages/templates/messages/inbox.html:10
+#: messages/templates/messages/outbox.html:10
+#: messages/templates/messages/trash.html:10
+msgid "Action"
+msgstr "פעולה"
+
+#: messages/templates/messages/inbox.html:22
+#: messages/templates/messages/outbox.html:19
+#: messages/templates/messages/trash.html:19
+#: messages/templates/messages/view.html:14
+msgid "DATETIME_FORMAT"
+msgstr ""
+
+#: messages/templates/messages/inbox.html:23
+#: messages/templates/messages/outbox.html:20
+msgid "delete"
+msgstr "מחק"
+
+#: messages/templates/messages/new_message.html:1
+#, python-format
+msgid ""
+"Hello %(recipient.first_name)s %(recipient.last_name)s,\n"
+"\n"
+"you received a private message from %(sender.first_name)s %(sender.last_name)"
+"s with\n"
+"the following contents:"
+msgstr ""
+
+#: messages/templates/messages/new_message.html:9
+#, python-format
+msgid "Sent from %(site_url)s"
+msgstr ""
+
+#: messages/templates/messages/new_message.html:11
+#: messages/templates/messages/view.html:21
+msgid "Reply"
+msgstr "מענה"
+
+#: messages/templates/messages/outbox.html:10
+msgid "Sent"
+msgstr "נשלחו"
+
+#: messages/templates/messages/trash.html:4
+#: messages/templates/messages/trash.html:7
+msgid "Deleted Messages"
+msgstr "הודעות שנמחקו"
+
+#: messages/templates/messages/trash.html:10
+#: messages/templates/messages/view.html:13
+msgid "Date"
+msgstr "תאריך"
+
+#: messages/templates/messages/trash.html:20
+msgid "undelete"
+msgstr "שחזר"
+
+#: messages/templates/messages/trash.html:26
+msgid ""
+"Deleted Messages are removed from the trash at unregular intervals, don't "
+"rely on this feature for long-time storage."
+msgstr "האשפה מתרוקנת מדי פעםאל תסמכו עליה לאחסון"
+
+#: messages/templates/messages/view.html:4
+#: messages/templates/messages/view.html:7
+msgid "View Message"
+msgstr "פתח הודעה"
+
+#: messages/templates/messages/view.html:24
+msgid "Public"
+msgstr "ציבורית"
+
+#: messages/templates/messages/view.html:26
+msgid "Publish"
+msgstr "פרסם"
+
+#: messages/templates/messages/view.html:29
+msgid "Delete"
+msgstr "מחק"
+
+#: messages/templates/notification/messages_deleted/notice.html:1
+#, python-format
+msgid ""
+"You have deleted the message <a href=\"%(message_url)s\">%(message)s</a>."
+msgstr ""
+
+#: messages/templates/notification/messages_received/notice.html:2
+#, python-format
+msgid ""
+"You have received the message <a href=\"%(message_url)s\">%(message)s</a> "
+"from %(message_sender)s."
+msgstr ""
+
+#: messages/templates/notification/messages_recovered/notice.html:1
+#, python-format
+msgid ""
+"You have recovered the message <a href=\"%(message_url)s\">%(message)s</a>."
+msgstr ""
+
+#: messages/templates/notification/messages_replied/notice.html:2
+#, python-format
+msgid ""
+"You have replied to <a href=\"%(message_url)s\">%(message_parent_msg)s</a> "
+"from %(message_recipient)s."
+msgstr ""
+
+#: messages/templates/notification/messages_reply_received/notice.html:2
+#, python-format
+msgid "%(message_sender)s has sent you a reply to %(message_parent_msg)s."
+msgstr ""
+
+#: messages/templates/notification/messages_sent/notice.html:2
+#, python-format
+msgid ""
+"You have sent the message <a href=\"%(message_url)s\">%(message)s</a> to %"
+"(message_recipient)s."
+msgstr ""

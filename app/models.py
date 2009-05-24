@@ -50,8 +50,8 @@ class CustomUser(User):
     #date_joined - A datetime designating when the account was created.
 
 class PreferencesForm(ModelForm):
-    country = forms.ChoiceField(required=True, label='Country', choices=country_choices)
-    language = forms.ChoiceField(required=True, label='Language', choices=language_choices)
+    country = forms.ChoiceField(required=True, label=_('Country'), choices=country_choices)
+    language = forms.ChoiceField(required=True, label=_('Language'), choices=language_choices)
 
     class Meta:
         model = CustomUser

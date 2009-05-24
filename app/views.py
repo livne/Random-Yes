@@ -40,6 +40,7 @@ def rylogin(request, token):
             except KeyError:
                 pass
             user.save()
+        request.session['django_language']=user.language
         return recipients(request, '/messages/inbox')
     else:
         return HttpResponseRedirect('/welcome/')
@@ -73,6 +74,7 @@ def preferences(request):
     form = PreferencesForm(data=request.POST or None, instance=user)
     if form.is_valid():
         form.save()
+        request.session['django_language']=user.language
     return render_to_response('app/preferences.html', {'form': form}, context_instance=template.RequestContext(request))
 preferences = login_required(preferences)
 

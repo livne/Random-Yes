@@ -6,3 +6,9 @@ sudo apt-get install geoip-bin python-geoip
 # http://www.mobilefish.com/tutorials/country_language_codes/countrylanguagecodes.html
 # http://www.mobilefish.com/tutorials/languagecodes/languagecodes.html
 
+sudo apt-get install gettext
+
+cd ~/django/django_projects/randomyes
+django-admin.py makemessages -a
+django-admin.py compilemessages
+
