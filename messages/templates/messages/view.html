@@ -17,7 +17,7 @@
 </dl>
 {{ message.body|linebreaksbr }}<br /><br />
 <center>
-<iframe src="http://translate.google.com/translate?prev=hp&hl=en&js=n&u=http%3A%2F%2Frandomyes.com%2Fmessages%2Ftranslate%2F{{ message.id }}%2F&sl=auto&tl={{ language_trans_code }}&history_state0=" style="border: 1; width: 80%; height: 20%"></iframe>
+<iframe src="http://translate.google.com/translate?prev=hp&hl=en&js=n&u=http%3A%2F%2Frandomyes.com%2Fmessages%2Ftranslate%2F{{ message.token }}%2F&sl=auto&tl={{ language_trans_code }}&history_state0=" style="border: 1; width: 80%; height: 20%"></iframe>
 </center>
 <br />
 {% ifequal message.recipient.id user.id %}

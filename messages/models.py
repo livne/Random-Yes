@@ -57,9 +57,10 @@ class Message(models.Model):
     sender_deleted_at = models.DateTimeField(_("Sender deleted at"), null=True, blank=True)
     recipient_deleted_at = models.DateTimeField(_("Recipient deleted at"), null=True, blank=True)
     public = models.BooleanField(_("Made public"), default=False)
-    
+    token = models.CharField(_("Token"), max_length=30)
+ 
     objects = MessageManager()
-    
+
     def new(self):
         """returns whether the recipient has read the message or not"""
         if self.read_at is not None:

@@ -4,6 +4,8 @@ from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ugettext_noop
 from django.contrib.auth.models import User
+from string import letters, digits
+from random import choice
 
 if "notification" in settings.INSTALLED_APPS:
     from notification import models as notification
@@ -36,6 +38,7 @@ class ComposeForm(forms.Form):
             recipients = [parent_msg.sender]
         subject = self.cleaned_data['subject']
         body = self.cleaned_data['body']
+        token=''.join(choice(letters+digits) for i in xrange(30))
         message_list = []
         for r in recipients:
             msg = Message(
@@ -43,6 +46,7 @@ class ComposeForm(forms.Form):
                 recipient = r,
                 subject = subject,
                 body = body,
+                token = token,
             )
             if parent_msg is not None:
                 msg.parent_msg = parent_msg

@@ -235,10 +235,11 @@ def view(request, message_id, template_name='messages/view.html'):
     }, context_instance=RequestContext(request))
 view = login_required(view)
 
-def translate(request, message_id, template_name='messages/translate.html'):
+def translate(request, message_token, template_name='messages/translate.html'):
     """
     Expose the subject and body of message, for translation purposes.
     Keep sender and receipient away.
+    Message token is needed.
     """
-    message = get_object_or_404(Message, id=message_id)
+    message = get_object_or_404(Message, token=message_token)
     return render_to_response(template_name, {'message': message}, context_instance=RequestContext(request))
