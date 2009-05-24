@@ -36,7 +36,8 @@ def rylogin(request, token):
             except KeyError:
                 pass
             try:
-                user.first_client=request.META['HTTP_USER_AGENT']
+                first_client=request.META['HTTP_USER_AGENT']
+                user.first_client=first_client[:120]
             except KeyError:
                 pass
             user.save()
