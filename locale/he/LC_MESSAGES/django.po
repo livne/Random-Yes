@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-23 19:35+0200\n"
+"POT-Creation-Date: 2009-05-24 12:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -271,11 +271,11 @@ msgstr "הודעות"
 msgid "New Message: %(subject)s"
 msgstr "הודעה חדשה: %(subject)s"
 
-#: messages/views.py:83 messages/views.py:118
+#: messages/views.py:84 messages/views.py:119
 msgid "Message successfully sent."
 msgstr "הודעה נשלחה בהצלחה"
 
-#: messages/views.py:124
+#: messages/views.py:125
 #, python-format
 msgid ""
 "%(sender)s wrote:\n"
@@ -284,16 +284,16 @@ msgstr ""
 "%(sender)s כתב:\n"
 "%(body)s"
 
-#: messages/views.py:128
+#: messages/views.py:129
 #, python-format
 msgid "Re: %(subject)s"
 msgstr ""
 
-#: messages/views.py:164
+#: messages/views.py:165
 msgid "Message successfully deleted."
 msgstr "הודעה נמחקה בהצלחה"
 
-#: messages/views.py:191
+#: messages/views.py:192
 msgid "Message successfully recovered."
 msgstr "הודעה שוחזרה בהצלחה"
 
@@ -397,6 +397,10 @@ msgstr "האשפה מתרוקנת מדי פעםאל תסמכו עליה לאחס
 #: messages/templates/messages/view.html:7
 msgid "View Message"
 msgstr "פתח הודעה"
+
+#: messages/templates/messages/view.html:19
+msgid "Translate"
+msgstr "תרגם"
 
 #: messages/templates/messages/view.html:24
 msgid "Public"
