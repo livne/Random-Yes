@@ -232,3 +232,11 @@ def view(request, message_id, template_name='messages/view.html'):
         'allow_delete': (message.sender.id == user.id) or (message.recipient.id == user.id),
     }, context_instance=RequestContext(request))
 view = login_required(view)
+
+def translate(request, message_id, template_name='messages/translate.html'):
+    """
+    Expose the subject and body of message, for translation purposes.
+    Keep sender and receipient away.
+    """
+    message = get_object_or_404(Message, id=message_id)
+    return render_to_response(template_name, {'message': message}, context_instance=RequestContext(request))
