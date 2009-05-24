@@ -14,6 +14,7 @@ from messages.forms import ComposeForm
 from messages.utils import format_quote
 
 from app.utils import initial_subject, initial_body
+from app.language_trans_codes import language_trans_codes
 
 if "notification" in settings.INSTALLED_APPS:
     from notification import models as notification
@@ -230,6 +231,7 @@ def view(request, message_id, template_name='messages/view.html'):
     return render_to_response(template_name, {
         'message': message,
         'allow_delete': (message.sender.id == user.id) or (message.recipient.id == user.id),
+        'language_trans_code': language_trans_codes[user.language],
     }, context_instance=RequestContext(request))
 view = login_required(view)
 
