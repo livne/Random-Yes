@@ -77,14 +77,14 @@ def preferences(request):
     form = PreferencesForm(data=request.POST or None, instance=user)
     if form.is_valid():
         form.save()
-        if prev_country != user.country:
-            name = random_user_name(user.country)
-            user.last_name=name[0]
-            user.first_name=name[1]
-            user.save()
-            return HttpResponseRedirect('/preferences/')
-        if prev_language != user.language:
-            request.session['django_language']=user.language
+        if prev_country != user.country or prev_language != user.language:
+            if prev_country != user.country::
+                name = random_user_name(user.country)
+                user.last_name=name[0]
+                user.first_name=name[1]
+                user.save()
+            if prev_language != user.language:
+                request.session['django_language']=user.language
             return HttpResponseRedirect('/preferences/')
     return render_to_response('app/preferences.html', {'form': form}, context_instance=template.RequestContext(request))
 preferences = login_required(preferences)
