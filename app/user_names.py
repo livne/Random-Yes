@@ -27,3 +27,34 @@ us = [[
 'Emma', 'Isabella', 'Emily', 'Madison', 'Ava', 'Olivia', 'Sophia', 'Abigail', 
 'Elizabeth', 'Chloe',
 ]]
+
+il = [[
+'כהן','לוי','מזרחי','פרץ','ביטון','דהן','אברהם','פרידמן','אזולאי','מלך','כץ','דוד','גבאי',
+'עמר','אוחיון','חדד','יוסף','בן-דוד','עדרי','לוין','משה','אשכנזי','טל','סגל','חזן','שפירא',
+'יצחק','קליין','דולן','חן',
+],
+[
+'אורי','נעם','דניאל','דוד','איתי','עמית','יוסף','רועי','עדו','משה','יובל','יהונתן',
+'נועה','שירה','מיה','אגם','תמר','יעל','רוני','שרה','מיכל','עדי','עדן','יובל','הילה','מיכל',
+]]
+
+at = [[
+'Gruber','Huber','Bauer','Wagner','Müller','Pichler','Steiner','Moser','Meyer','Hofer','Leitner','Berger','Fuchs','Eder',
+'Fisher','Schmid','Winkler','Weber','Schwarz','Maier','Schneider','Reiter','Mayr','Schmidt','Wimmer','Egger','Brunner','Lang',
+'Baumgartner','Auer','Binder','Lechner','Wolf','Wallner','Aigner','Ebner','Koller','Lehner','','','','',
+'Haas','Schuster',
+],
+[
+'Lukas','Tobias','David','Julian','Florian','Maximilian','Fabian','Alexander','Felix','Simon',
+'Lena','Leonie','Anna','Sarah','Julia','Hannah','Laura','Katharina','Sophie','Lisa',
+]]
+
+de = [[
+'Müller','Schmidt','Schneider','Fischer','Meyer','Weber','Schulz','Wagner','Becker','Hoffmann','Schäfer','Koch','Bauer','Richter','Klein','Schröder',
+'Wolf','Neumann','Schwarz','Zimmermann','Krüger','Braun','Hofmann','Schmitz','Hartmann','Lange','Schmitt','Werner','Krause','Meier','Schmid','Lehmann',
+'Schultze','Maier','Köhler','Herrmann','Walter','König','Mayer','Huber','Kaiser','Fuchs','Peters','Möller','Scholz','Lang','Weiss','Jung','Hahn','Vogel',
+],
+[
+'Leon','Lukas','Luka','Tim','Fynn','Jonas','Felix','Luis','Paul','Maximilian',
+'Leonie','Hanna','Mia','Lena','Anna','Lea','Emily','Lara','Emma','Sara',
+]]

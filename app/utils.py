@@ -2,7 +2,7 @@ import GeoIP
 from country_langs import country_langs
 from language_names import language_names
 from country_names import country_names
-from user_names import us
+from user_names import us, il, de, at
 from django.utils.translation import ugettext_lazy as _
 from string import strip
 from random import choice, sample
@@ -45,6 +45,12 @@ def language_name(language_code):
 
 def random_user_name(country_code):
     # surname and given name
+    if country_code == 'il':    
+        return [choice(il[0]),choice(il[1])]
+    if country_code == 'at':    
+        return [choice(at[0]),choice(at[1])]
+    if country_code == 'de':    
+        return [choice(de[0]),choice(de[1])]
     return [choice(us[0]),choice(us[1])]
 
 def random_recipients(sender_id, requested_amount, countries=None, language=None, gender=None, age=None, keywords=None):
