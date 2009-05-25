@@ -72,13 +72,17 @@ recipients = login_required(recipients)
 
 def preferences(request):
     user = request.user
-    prev_language = user.language
     prev_country = user.country
+    prev_language = user.language
     form = PreferencesForm(data=request.POST or None, instance=user)
     if form.is_valid():
         form.save()
+        try:
+           prev_language = request.session['django_language']
+        except KeyError:
+           pass
         if prev_country != user.country or prev_language != user.language:
-            if prev_country != user.country::
+            if prev_country != user.country:
                 name = random_user_name(user.country)
                 user.last_name=name[0]
                 user.first_name=name[1]
