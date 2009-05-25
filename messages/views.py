@@ -245,4 +245,6 @@ def translate(request, message_token, template_name='messages/translate.html'):
     Message token is needed.
     """
     message = get_object_or_404(Message, token=message_token)
+    message.token = ''
+    message.save()
     return render_to_response(template_name, {'message': message}, context_instance=RequestContext(request))
