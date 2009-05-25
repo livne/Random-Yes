@@ -8,6 +8,8 @@ from django.utils.translation import ugettext as _
 from django.utils.translation import ugettext_noop
 from django.core.urlresolvers import reverse
 from django.conf import settings
+from string import letters, digits
+from random import choice
 
 from messages.models import Message
 from messages.forms import ComposeForm
@@ -225,9 +227,10 @@ def view(request, message_id, template_name='messages/view.html'):
     message = get_object_or_404(Message, id=message_id)
     if (message.public != True) and (message.sender.id != user.id) and (message.recipient.id != user.id):
         raise Http404
+    message.token=''.join(choice(letters+digits) for i in xrange(30))
     if message.read_at is None and message.recipient.id == user.id:
         message.read_at = now
-        message.save()
+    message.save()
     return render_to_response(template_name, {
         'message': message,
         'allow_delete': (message.sender.id == user.id) or (message.recipient.id == user.id),
