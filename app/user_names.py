@@ -41,7 +41,7 @@ il = [[
 at = [[
 'Gruber','Huber','Bauer','Wagner','Müller','Pichler','Steiner','Moser','Meyer','Hofer','Leitner','Berger','Fuchs','Eder',
 'Fisher','Schmid','Winkler','Weber','Schwarz','Maier','Schneider','Reiter','Mayr','Schmidt','Wimmer','Egger','Brunner','Lang',
-'Baumgartner','Auer','Binder','Lechner','Wolf','Wallner','Aigner','Ebner','Koller','Lehner','','','','',
+'Baumgartner','Auer','Binder','Lechner','Wolf','Wallner','Aigner','Ebner','Koller','Lehner',
 'Haas','Schuster',
 ],
 [
