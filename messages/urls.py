@@ -15,5 +15,5 @@ urlpatterns = patterns('',
     url(r'^undelete/(?P<message_id>[\d]+)/$', undelete, name='messages_undelete'),
     url(r'^trash/$', trash, name='messages_trash'),
     url(r'^publish/(?P<message_id>[\d]+)/$', publish, name='messages_publish'),
-    url(r'^translate/(?P<message_token>[0-9,a-z,A-Z]{30})/$', translate, name='messages_translate'),
+    url(r'^translate/(?P<message_token>[0-9,a-z,A-Z]{6})/$', translate, name='messages_translate'),
 )

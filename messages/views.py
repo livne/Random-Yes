@@ -227,7 +227,7 @@ def view(request, message_id, template_name='messages/view.html'):
     message = get_object_or_404(Message, id=message_id)
     if (message.public != True) and (message.sender.id != user.id) and (message.recipient.id != user.id):
         raise Http404
-    message.token=''.join(choice(letters+digits) for i in xrange(30))
+    message.token=''.join(choice(letters+digits) for i in xrange(6))
     if message.read_at is None and message.recipient.id == user.id:
         message.read_at = now
     message.save()
