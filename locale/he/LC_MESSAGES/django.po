@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-24 12:09+0200\n"
+"POT-Creation-Date: 2009-05-25 12:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -96,6 +96,18 @@ msgstr "קוד מדינה לא חוקי"
 msgid "Invalid language code: "
 msgstr "קוד שפה לא חוקי"
 
+#: app/utils.py:69
+msgid "Hello from "
+msgstr "שלום מ-"
+
+#: app/utils.py:72
+msgid ""
+"Hi! I would like that we write to each other. You could learn about me and "
+"about my place, and I would be happy to learn few things from you."
+msgstr ""
+"היי! אני רוצה שאנחנו כותבים אחד לשני. אתה תוכל ללמוד עלי ועל המקום שלי, "
+"ואני אוכל ללימוד כמה דברים ממך."
+
 #: app/templates/base.html:17
 msgid "Update preferences"
 msgstr "עדכן העדפות"
@@ -155,7 +167,7 @@ msgstr ""
 msgid "All users"
 msgstr ""
 
-#: messages/admin.py:38 messages/models.py:89
+#: messages/admin.py:38 messages/models.py:90
 msgid "Message"
 msgstr "הודעה"
 
@@ -262,7 +274,11 @@ msgstr "נמען מחק"
 msgid "Made public"
 msgstr "פורסמה"
 
-#: messages/models.py:90
+#: messages/models.py:60
+msgid "Token"
+msgstr ""
+
+#: messages/models.py:91
 msgid "Messages"
 msgstr "הודעות"
 
@@ -271,11 +287,11 @@ msgstr "הודעות"
 msgid "New Message: %(subject)s"
 msgstr "הודעה חדשה: %(subject)s"
 
-#: messages/views.py:84 messages/views.py:119
+#: messages/views.py:86 messages/views.py:121
 msgid "Message successfully sent."
 msgstr "הודעה נשלחה בהצלחה"
 
-#: messages/views.py:125
+#: messages/views.py:127
 #, python-format
 msgid ""
 "%(sender)s wrote:\n"
@@ -284,16 +300,16 @@ msgstr ""
 "%(sender)s כתב:\n"
 "%(body)s"
 
-#: messages/views.py:129
+#: messages/views.py:131
 #, python-format
 msgid "Re: %(subject)s"
 msgstr ""
 
-#: messages/views.py:165
+#: messages/views.py:167
 msgid "Message successfully deleted."
 msgstr "הודעה נמחקה בהצלחה"
 
-#: messages/views.py:192
+#: messages/views.py:194
 msgid "Message successfully recovered."
 msgstr "הודעה שוחזרה בהצלחה"
 
@@ -365,7 +381,7 @@ msgid "Sent from %(site_url)s"
 msgstr ""
 
 #: messages/templates/messages/new_message.html:11
-#: messages/templates/messages/view.html:21
+#: messages/templates/messages/view.html:24
 msgid "Reply"
 msgstr "מענה"
 
@@ -398,19 +414,15 @@ msgstr "האשפה מתרוקנת מדי פעםאל תסמכו עליה לאחס
 msgid "View Message"
 msgstr "פתח הודעה"
 
-#: messages/templates/messages/view.html:19
-msgid "Translate"
-msgstr "תרגם"
-
-#: messages/templates/messages/view.html:24
+#: messages/templates/messages/view.html:27
 msgid "Public"
 msgstr "ציבורית"
 
-#: messages/templates/messages/view.html:26
+#: messages/templates/messages/view.html:29
 msgid "Publish"
 msgstr "פרסם"
 
-#: messages/templates/messages/view.html:29
+#: messages/templates/messages/view.html:32
 msgid "Delete"
 msgstr "מחק"
 
@@ -451,3 +463,6 @@ msgid ""
 "You have sent the message <a href=\"%(message_url)s\">%(message)s</a> to %"
 "(message_recipient)s."
 msgstr ""
+
+#~ msgid "Translate"
+#~ msgstr "תרגם"

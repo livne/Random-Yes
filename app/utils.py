@@ -66,21 +66,10 @@ def random_recipients(sender_id, requested_amount, countries=None, language=None
     return sample(potential_recipients, n)
 
 def initial_subject(user):
-    return 'Hello from ' + country_names[user.country]
+    return _('Hello from ') + country_names[user.country]
 
 def initial_body(user):
-    body = 'Hi! My name is ' + user.first_name + '. '
-    body += 'I would like that we write to each other. '
-    body += 'Few details about me: I am '
-    if user.gender:
-        if user.gender is 'f':
-            gender = 'female'
-        else:
-            gender = 'male'
-        body += 'a ' + gender + ', '
-    if user.age:
-        body += str(user.age) + ' years old, '
-    body += 'from ' + country_names[user.country]
-    body += 'and I would be happy to learn few things about you.'
+    body = _('Hi! I would like that we write to each other. You could learn about me and about my place, ' \
+             'and I would be happy to learn few things from you.')
     return body
 
