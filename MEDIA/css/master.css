@@ -1,0 +1,135 @@
+body 
+{
+	background-color: #ffffff;
+	margin: 0px 0px 0px 0px;
+	padding: 19px 17px 19px 17px;
+	text-align: left;
+}
+
+a:link, a:active, a:visited, a:hover
+{
+	text-decoration: none;
+	color: #000000;
+}
+
+.bodywidth
+{
+	width: 800px;
+}
+
+table.messages, table.messages tr td, table.messages tr th
+{
+	border: solid;
+	border-width: 1px;
+	border-color: #cccccc;
+}
+
+td, th
+{
+	padding: 2px;
+}
+
+a:link, a:active, a:hover, a:visited
+{
+	color: blue;
+	text-decoration: underline;
+}
+
+
+h1
+{
+	font-size: 20px;
+	font-weight: bold;
+	clear: both;
+    text-align: right;
+}
+
+
+h2
+{
+	font-size: 14px;
+	font-weight: bold;
+	float: left;
+}
+
+p
+{
+	padding-top: 25px;
+}
+
+
+img#logo
+{
+	float: right;
+}
+
+span#copyright
+{
+	margin-top: 29px;
+	float: left;
+	color: red;
+	font-weight: bold;
+}
+
+span.warning
+{
+	margin-top: 29px;
+	float: left;
+	color: red;
+	font-weight: bold;
+}
+
+span.info
+{
+	margin-top: 29px;
+	float: left;
+	color: #006600;
+	font-weight: bold;
+}
+
+hr#hrtop
+{
+	clear: both;
+	margin-bottom: 10px;
+}
+
+hr#hrbottom
+{
+	clear: both;
+	margin-top: 20px;
+}
+
+input.topmargin
+{
+	margin-top: 4px;
+}
+
+
+div.system
+{
+	border: solid;
+	border-width: 1px;
+	border-color: #808080;
+	margin-bottom: 25px;
+}
+
+div.system_content
+{
+	padding: 5px;
+}
+
+.stdinwidth
+{
+	width: 250px;
+}
+
+td.first
+{
+	padding-right: 15px;
+}
+
+
+table.messages tr th
+{
+	padding-right: 20px;
+}
