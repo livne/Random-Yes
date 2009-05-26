@@ -1,0 +1,25 @@
+body{ behavior:url("/MEDIA/css/csshover2.htc"); }
+.menu {float:left; padding:0; margin:0;color: #616161;background: #A6E9FF;width:100%; border:solid 1px #A6E9FF;clear:both;} /*Color navigation bar normal mode*/
+.menu  a, .menu a:visited {
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-style:normal;
+font-weight:bold;
+font-size:14px;
+color: #616161;
+background-color: #A6E9FF;
+text-decoration: none;
+}
+.menu ul {list-style-type:none;padding:0; margin:0;}
+.menu ul li {float:left; position:relative; z-index:auto !important ; z-index:1000 ; border-right:solid 1px #A6E9FF; border-left:solid 1px #A6E9FF;}
+.menu ul li a {color: #616161;background: #A6E9FF;float:none !important ; float:left ; display:block; height:30px; line-height:30px; padding:0 10px 0 10px; text-decoration:none; }
+.menu ul li ul {display:none; border:none;color: #616161;background: #A6E9FF; width:1px}
+.menu ul li:hover a {background-color:#0EB4AB; text-decoration:none; color:#E8FDFC;} /*Color main cells hovering mode*/
+.menu ul li:hover ul {display:block;  position:absolute; z-index:999; top:29px; margin-top:1px; left:0;}
+.menu ul li:hover ul li a {display:block; width:100px; height:auto; line-height:1.3em; margin-left:-1px; padding:5px 10px 5px 10px; border-left:solid 1px #A6E9FF; border-bottom: solid 1px #A6E9FF; background-color:#A6E9FF;  color:#616161;} /*Color subcells normal mode*/
+.menu ul li:hover ul li a:hover {background-color:#0EB4AB; text-decoration:none;color:#E8FDFC;} /*Color subcells hovering mode*/
+.menu ul li a:hover {background-color:#0EB4AB; text-decoration:none;color:#E8FDFC;} /*Color main cells hovering mode*/
+.menu ul li a:hover ul {display:block; width:100px; position:absolute; z-index:999; top:29px; left:0; }
+.menu ul li ul li a:visited { background-color:#A6E9FF;  color:#616161;} /*Color subcells normal mode*/
+.menu ul li a:hover ul li a {display:block; width:100px; height:1px; line-height:1.3em; padding:4px 16px 4px 16px; border-left:solid 1px #A6E9FF; border-bottom: solid 1px #A6E9FF; background-color:#A6E9FF;  color:#616161;} 
+.menu ul li a:hover ul li a:hover {background-color:#0EB4AB; text-decoration:none;color:#E8FDFC;} /*Color subcells hovering mode*/
+
