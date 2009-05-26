@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-25 12:00+0200\n"
+"POT-Creation-Date: 2009-05-26 16:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,7 +68,8 @@ msgstr "כתבן אוטומטי"
 msgid "Always use automatic message composition."
 msgstr "השתמש תמיד באפשרות כתבן הודעה אוטומטי"
 
-#: app/models.py:31
+#: app/models.py:31 app/templates/base.html:49
+#: messages/templates/messages/compose.html:11
 msgid "Karma"
 msgstr "קארמה"
 
@@ -105,31 +106,46 @@ msgid ""
 "Hi! I would like that we write to each other. You could learn about me and "
 "about my place, and I would be happy to learn few things from you."
 msgstr ""
-"היי! אני רוצה שאנחנו כותבים אחד לשני. אתה תוכל ללמוד עלי ועל המקום שלי, "
-"ואני אוכל ללימוד כמה דברים ממך."
+"היי! אני רוצה שאנחנו כותבים אחד לשני. אתה תוכל ללמוד עלי ועל המקום שלי, ואני "
+"אוכל ללימוד כמה דברים ממך."
 
-#: app/templates/base.html:17
-msgid "Update preferences"
-msgstr "עדכן העדפות"
-
-#: app/templates/base.html:19
+#: app/templates/base.html:48
 msgid "Hi,"
 msgstr "שלום,"
 
-#: app/templates/base.html:20 app/templates/app/preferences.html:4
+#: app/templates/base.html:49 messages/templates/messages/compose.html:11
+msgid "Karma: "
+msgstr "קארמה"
+
+#: app/templates/base.html:51 messages/models.py:91
+msgid "Messages"
+msgstr "הודעות"
+
+#: app/templates/base.html:53
+msgid "Compose"
+msgstr "כתוב"
+
+#: app/templates/base.html:54 messages/templates/messages/base.html:8
+#: messages/templates/messages/inbox.html:4
+#: messages/templates/messages/inbox.html:7
+#: messages/templates/messages/new_message.html:10
+msgid "Inbox"
+msgstr "נכנסות"
+
+#: app/templates/base.html:55 messages/templates/messages/outbox.html:10
+msgid "Sent"
+msgstr "יוצאות"
+
+#: app/templates/base.html:56 messages/templates/messages/base.html:11
+msgid "Trash"
+msgstr "אשפה"
+
+#: app/templates/base.html:60 app/templates/app/preferences.html:4
 #: app/templates/app/preferences.html:8
 msgid "Preferences"
 msgstr "העדפות"
 
-#: app/templates/base.html:21
-msgid "Compose"
-msgstr "כתוב"
-
-#: app/templates/base.html:22
-msgid "My Messages"
-msgstr "הודעות"
-
-#: app/templates/base.html:23
+#: app/templates/base.html:63
 msgid "Logout"
 msgstr "ביי"
 
@@ -278,20 +294,16 @@ msgstr "פורסמה"
 msgid "Token"
 msgstr ""
 
-#: messages/models.py:91
-msgid "Messages"
-msgstr "הודעות"
-
 #: messages/utils.py:27
 #, python-format
 msgid "New Message: %(subject)s"
 msgstr "הודעה חדשה: %(subject)s"
 
-#: messages/views.py:86 messages/views.py:121
+#: messages/views.py:86 messages/views.py:122
 msgid "Message successfully sent."
 msgstr "הודעה נשלחה בהצלחה"
 
-#: messages/views.py:127
+#: messages/views.py:128
 #, python-format
 msgid ""
 "%(sender)s wrote:\n"
@@ -300,25 +312,18 @@ msgstr ""
 "%(sender)s כתב:\n"
 "%(body)s"
 
-#: messages/views.py:131
+#: messages/views.py:132
 #, python-format
 msgid "Re: %(subject)s"
 msgstr ""
 
-#: messages/views.py:167
+#: messages/views.py:168
 msgid "Message successfully deleted."
 msgstr "הודעה נמחקה בהצלחה"
 
-#: messages/views.py:194
+#: messages/views.py:195
 msgid "Message successfully recovered."
 msgstr "הודעה שוחזרה בהצלחה"
-
-#: messages/templates/messages/base.html:8
-#: messages/templates/messages/inbox.html:4
-#: messages/templates/messages/inbox.html:7
-#: messages/templates/messages/new_message.html:10
-msgid "Inbox"
-msgstr "הודעות נכנסות"
 
 #: messages/templates/messages/base.html:9
 #: messages/templates/messages/outbox.html:4
@@ -330,16 +335,12 @@ msgstr "הודעות יוצאות"
 msgid "New Message"
 msgstr "הודעה חדשה"
 
-#: messages/templates/messages/base.html:11
-msgid "Trash"
-msgstr "אשפה"
-
 #: messages/templates/messages/compose.html:4
 #: messages/templates/messages/compose.html:8
 msgid "Compose Message"
-msgstr "כתוב הודעה"
+msgstr "הודעה חדשה"
 
-#: messages/templates/messages/compose.html:16
+#: messages/templates/messages/compose.html:17
 msgid "Send"
 msgstr "שלח"
 
@@ -384,10 +385,6 @@ msgstr ""
 #: messages/templates/messages/view.html:24
 msgid "Reply"
 msgstr "מענה"
-
-#: messages/templates/messages/outbox.html:10
-msgid "Sent"
-msgstr "נשלחו"
 
 #: messages/templates/messages/trash.html:4
 #: messages/templates/messages/trash.html:7
@@ -463,6 +460,12 @@ msgid ""
 "You have sent the message <a href=\"%(message_url)s\">%(message)s</a> to %"
 "(message_recipient)s."
 msgstr ""
+
+#~ msgid "Update preferences"
+#~ msgstr "עדכן העדפות"
+
+#~ msgid "My Messages"
+#~ msgstr "הודעות"
 
 #~ msgid "Translate"
 #~ msgstr "תרגם"
