@@ -115,8 +115,9 @@ def reply(request, message_id, form_class=ComposeForm,
         form = form_class(request.POST, recipient_filter=recipient_filter)
         if form.is_valid():
             form.save(sender=request.user, parent_msg=parent)
-            request.user.karma += 1
-            request.user.save()
+            if request.user.karma == 1:
+                request.user.karma += 1;
+                request.user.save()
             request.user.message_set.create(
                 message=_(u"Message successfully sent."))
             if success_url is None:
