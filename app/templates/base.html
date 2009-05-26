@@ -2,6 +2,34 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="{{ LANGUAGE_CODE }}" xml:lang="{{ LANGUAGE_CODE }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
 <head>
+
+<style type="text/css" media="screen">
+body{ behavior:url("/MEDIA/css/csshover2.htc"); }
+.menu {float:left; padding:0; margin:0;color: #616161;background: #A6E9FF;width:100%; border:solid 1px #A6E9FF;clear:both;} /*Color navigation bar normal mode*/
+.menu  a, .menu a:visited {
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-style:normal;
+font-weight:bold;
+font-size:14px;
+color: #616161;
+background-color: #A6E9FF;
+text-decoration: none;
+}
+.menu ul {list-style-type:none;padding:0; margin:0;}
+.menu ul li {float:left; position:relative; z-index:auto !important ; z-index:1000 ; border-right:solid 1px #A6E9FF; border-left:solid 1px #A6E9FF;}
+.menu ul li a {color: #616161;background: #A6E9FF;float:none !important ; float:left ; display:block; height:30px; line-height:30px; padding:0 10px 0 10px; text-decoration:none; }
+.menu ul li ul {display:none; border:none;color: #616161;background: #A6E9FF; width:1px}
+.menu ul li:hover a {background-color:#0EB4AB; text-decoration:none; color:#E8FDFC;} /*Color main cells hovering mode*/
+.menu ul li:hover ul {display:block;  position:absolute; z-index:999; top:29px; margin-top:1px; left:0;}
+.menu ul li:hover ul li a {display:block; width:100px; height:auto; line-height:1.3em; margin-left:-1px; padding:5px 10px 5px 10px; border-left:solid 1px #A6E9FF; border-bottom: solid 1px #A6E9FF; background-color:#A6E9FF;  color:#616161;} /*Color subcells normal mode*/
+.menu ul li:hover ul li a:hover {background-color:#0EB4AB; text-decoration:none;color:#E8FDFC;} /*Color subcells hovering mode*/
+.menu ul li a:hover {background-color:#0EB4AB; text-decoration:none;color:#E8FDFC;} /*Color main cells hovering mode*/
+.menu ul li a:hover ul {display:block; width:100px; position:absolute; z-index:999; top:29px; left:0; }
+.menu ul li ul li a:visited { background-color:#A6E9FF;  color:#616161;} /*Color subcells normal mode*/
+.menu ul li a:hover ul li a {display:block; width:100px; height:1px; line-height:1.3em; padding:4px 16px 4px 16px; border-left:solid 1px #A6E9FF; border-bottom: solid 1px #A6E9FF; background-color:#A6E9FF;  color:#616161;} 
+.menu ul li a:hover ul li a:hover {background-color:#0EB4AB; text-decoration:none;color:#E8FDFC;} /*Color subcells hovering mode*/
+</style>
+</head>
 <title>{% block title %}{% endblock %}</title>
     {% block breadcrumbs %}
     {% endblock %}
@@ -14,13 +42,28 @@
     {% block content_title %}{% endblock %}
     {% block greetings %}
     {% if user %}
-    <a href="/preferences/"><img src="/MEDIA/img/flags/png/{{ user.country }}.png" alt="{{ user.country }}" border="0" title="{% trans "Update preferences" %}"/></a> 
-    {% trans "Hi," %} {{ user.first_name }}!
-    <img src="/MEDIA/img/status/png/karma-{{ user.karma }}-mini.png" alt="{% trans "Karma" %}" title="{% trans "Karma: " %} {{ user.karma }}">
-    <a href="/preferences/">{% trans "Preferences" %}</a>
-    <a href="/messages/compose/">{% trans "Compose" %}</a>
-    <a href="/messages/">{% trans "My Messages" %}</a>
-    <a href="/logout/">{% trans "Logout" %}</a>
+
+<div class="menu "> 
+<ul><li>
+    <a href="/preferences/"><img src="/MEDIA/img/flags/png/{{ user.country }}.png" alt="{{ user.country }}" border="0" title="{{ user.country }}"/> {% trans "Hi," %} {{ user.first_name }}!
+<img src="/MEDIA/img/status/png/karma-{{ user.karma }}-mini.png" border="0" alt="{% trans "Karma" %}" title="{% trans "Karma: " %} {{ user.karma }}">
+</a></li></ul>
+<ul><li><a href="/messages/">{% trans "Messages" %}</a>
+<ul>
+<li><a href="/messages/compose/">{% trans "Compose" %}</a></li>
+<li><a href="/messages/inbox/">{% trans "Inbox" %}</a></li>
+<li><a href="/messages/outbox/">{% trans "Sent" %}</a></li>
+<li><a href="/messages/trash/">{% trans "Trash" %}</a></li>
+</ul>
+</li></ul>
+
+<ul><li><a href="/preferences/">{% trans "Preferences" %}</a>
+</li></ul>
+
+<ul><li><a href="/logout/">{% trans "Logout" %}</a></li></ul>
+
+</div>
+
     {% endif %}
     {% endblock %}
     {% block recipients %}
