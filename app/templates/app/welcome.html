@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "prebase.html" %}
 {% load i18n %}
 {% block title %}
 {% trans "Welcome to Random Yes!" %}
@@ -7,12 +7,14 @@
 {% endblock %}
 
 {% block content %}
-<h1>{% trans "Welcome to Random Yes!" %}</h1>
+<div class="welcome">{% trans "Welcome to Random Yes!" %}</div>
+<div class="login">
 {%if user %}
 {%if user.username %}
 <ul>{% trans "Login as" %} <a href="/messages/inbox/">{{ user }}</a></ul>
 {% endif %}
 {% endif %}
 <ul>{% trans "Login as" %} <a href="/new/">{% trans "New User" %}</a></ul>
+</div>
 {% endblock %}
 
