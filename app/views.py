@@ -42,7 +42,7 @@ def rylogin(request, token):
                 pass
             user.save()
         request.session['django_language']=user.language
-        return recipients(request, '/messages/inbox')
+        return recipients(request, '/messages/compose/')
     else:
         return HttpResponseRedirect('/welcome/')
 
