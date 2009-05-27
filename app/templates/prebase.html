@@ -9,14 +9,10 @@
 <body>
 <title>{% block title %}{% endblock %}</title>
 {% block breadcrumbs %}{% endblock %}
-
-    {% if messages %}
-    <ul class="messagelist">{% for message in messages %}<li>{{ message|escape }}</li>{% endfor %}</ul>
-    {% endif %}
-
 {% block pretitle %}{% endblock %}
 {% block content_title %}{% endblock %}
 {% block greetings %}{% endblock %}
+{% block notification %}{% endblock %}
 {% block recipients %}{% endblock %}
 {% block content %}
 {% block object-tools %}{% endblock %}

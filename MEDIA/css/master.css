@@ -1,6 +1,6 @@
 body 
 {
-	background-color: #ffffff;
+	background-color: #f9fdff;
 	margin: 0px 0px 0px 0px;
 	padding: 19px 17px 19px 17px;
 	text-align: left;
@@ -185,9 +185,10 @@ div.sorry
 	margin-top: 150px;
 }
 
-div.system_content
+div.notification 
 {
-	padding: 5px;
+    font-size: 14px;
+    text-align: left;
 }
 
 .stdinwidth

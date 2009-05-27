@@ -7,10 +7,6 @@
 <title>{% block title %}{% endblock %}</title>
 {% block breadcrumbs %}{% endblock %}
 
-{% if messages %}
-<ul class="messagelist">{% for message in messages %}<li>{{ message|escape }}</li>{% endfor %}</ul>
-{% endif %}
-
 {% block pretitle %}{% endblock %}
 {% block content_title %}{% endblock %}
 {% block greetings %}
@@ -38,6 +34,15 @@
 
 {% endif %}
 {% endblock %}
+
+{% block notification %}
+<div class="notification">
+{% if messages %}
+{% for message in messages %}<p>{{ message|escape }}</p>{% endfor %}
+{% endif %}
+</div>
+{% endblock %}
+
 {% block recipients %}{% endblock %}
 {% block content %}
 {% block object-tools %}{% endblock %}
