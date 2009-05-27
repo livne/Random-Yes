@@ -26,26 +26,52 @@ div.messages table
 }
 
 
-* .c1 
+* .c1-even 
 { 
     width: 10%;
     background-color: #dcf6ff;  
 }
 
-* .c2
+* .c2-even
 { 
     width: 30%; 
-    background-color: #ecfaff;  
+    background-color: #dcf6ff;  
 }
 
-* .c3 
+* .c3-even
 { 
     width: 12%; 
     text-align: center;
     background-color: #dcf6ff;  
 }
 
-* .c4
+* .c4-even
+{ 
+    width: 5%;
+    text-align: center;
+    background-color: #dcf6ff;  
+}
+
+* .c1-odd 
+{ 
+    width: 10%;
+    background-color: #ecfaff;  
+}
+
+* .c2-odd
+{ 
+    width: 30%; 
+    background-color: #ecfaff;  
+}
+
+* .c3-odd
+{ 
+    width: 12%; 
+    text-align: center;
+    background-color: #ecfaff;  
+}
+
+* .c4-odd
 { 
     width: 5%;
     text-align: center;

@@ -11,15 +11,16 @@
             <tbody>
         {% for message in message_list %} 
             <tr>
-                <td class="c1">{{ message.sender.first_name }} {{ message.sender.last_name }}</td>
-                <td class="c2">
+
+                <td class={% cycle 'c1-odd' 'c1-even' %}>{{ message.sender.first_name }} {{ message.sender.last_name }}</td>
+                <td class={% cycle 'c2-odd' 'c2-even' %}>
                     {% if message.new %}<strong>{% endif %}
                     {% if message.replied %}<em>{% endif %}
                     <a href="{{message.get_absolute_url }}">{{ message.subject }}</a>
                     {% if message.replied %}</em>{% endif %}
                     {% if message.new %}</strong>{% endif %}</td>
-                <td class="c3">{{ message.sent_at|date:_("DATETIME_FORMAT") }}</td>
-                <td class="c4"><a href="{% url messages.views.delete message.id %}">{% trans "delete" %}</a></td>
+                <td class={% cycle 'c3-odd' 'c3-even' %}>{{ message.sent_at|date:_("DATETIME_FORMAT") }}</td>
+                <td class={% cycle 'c4-odd' 'c4-even' %}><a href="{% url messages.views.delete message.id %}">{% trans "delete" %}</a></td>
             </tr>
         {% endfor %}
             </tbody>
