@@ -17,11 +17,39 @@ a:link, a:active, a:visited, a:hover
 	width: 800px;
 }
 
-table.messages, table.messages tr td, table.messages tr th
+div.messages table
 {
 	border: solid;
 	border-width: 1px;
 	border-color: #cccccc;
+    width: 100%
+}
+
+
+* .c1 
+{ 
+    width: 10%;
+    background-color: #dcf6ff;  
+}
+
+* .c2
+{ 
+    width: 30%; 
+    background-color: #ecfaff;  
+}
+
+* .c3 
+{ 
+    width: 12%; 
+    text-align: center;
+    background-color: #dcf6ff;  
+}
+
+* .c4
+{ 
+    width: 5%;
+    text-align: center;
+    background-color: #ecfaff;  
 }
 
 td, th
@@ -104,13 +132,31 @@ input.topmargin
 	margin-top: 4px;
 }
 
-
-div.system
+div.welcome
 {
-	border: solid;
-	border-width: 1px;
-	border-color: #808080;
-	margin-bottom: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    text-color: #808080;
+    margin-top: 125px;
+}
+
+div.login
+{
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-color: #808080;
+    margin-top: 25px;
+}
+
+div.sorry
+{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+	text-color: #808080;
+	margin-top: 150px;
 }
 
 div.system_content
@@ -129,7 +175,3 @@ td.first
 }
 
 
-table.messages tr th
-{
-	padding-right: 20px;
-}
