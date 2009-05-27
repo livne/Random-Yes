@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-26 16:39+0200\n"
+"POT-Creation-Date: 2009-05-27 13:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,7 +68,7 @@ msgstr "כתבן אוטומטי"
 msgid "Always use automatic message composition."
 msgstr "השתמש תמיד באפשרות כתבן הודעה אוטומטי"
 
-#: app/models.py:31 app/templates/base.html:49
+#: app/models.py:31 app/templates/base.html:17
 #: messages/templates/messages/compose.html:11
 msgid "Karma"
 msgstr "קארמה"
@@ -109,43 +109,44 @@ msgstr ""
 "היי! אני רוצה שאנחנו כותבים אחד לשני. אתה תוכל ללמוד עלי ועל המקום שלי, ואני "
 "אוכל ללימוד כמה דברים ממך."
 
-#: app/templates/base.html:48
+#: app/templates/base.html:16
 msgid "Hi,"
 msgstr "שלום,"
 
-#: app/templates/base.html:49 messages/templates/messages/compose.html:11
+#: app/templates/base.html:17 messages/templates/messages/compose.html:11
 msgid "Karma: "
 msgstr "קארמה"
 
-#: app/templates/base.html:51 messages/models.py:91
+#: app/templates/base.html:19 messages/models.py:91
 msgid "Messages"
 msgstr "הודעות"
 
-#: app/templates/base.html:53
+#: app/templates/base.html:21
 msgid "Compose"
 msgstr "כתוב"
 
-#: app/templates/base.html:54 messages/templates/messages/base.html:8
-#: messages/templates/messages/inbox.html:4
+#: app/templates/base.html:22 messages/templates/messages/inbox.html:4
 #: messages/templates/messages/inbox.html:7
+#: messages/templates/messages/messages_list.html:4
+#: messages/templates/messages/messages_list.html:7
 #: messages/templates/messages/new_message.html:10
 msgid "Inbox"
 msgstr "נכנסות"
 
-#: app/templates/base.html:55 messages/templates/messages/outbox.html:10
+#: app/templates/base.html:23
 msgid "Sent"
 msgstr "יוצאות"
 
-#: app/templates/base.html:56 messages/templates/messages/base.html:11
+#: app/templates/base.html:24
 msgid "Trash"
 msgstr "אשפה"
 
-#: app/templates/base.html:60 app/templates/app/preferences.html:4
+#: app/templates/base.html:28 app/templates/app/preferences.html:4
 #: app/templates/app/preferences.html:8
 msgid "Preferences"
 msgstr "העדפות"
 
-#: app/templates/base.html:63
+#: app/templates/base.html:31
 msgid "Logout"
 msgstr "ביי"
 
@@ -157,16 +158,15 @@ msgstr ""
 msgid "Welcome to Random Yes!"
 msgstr "ברוכים הבאים לרנדום כן"
 
-#: app/templates/app/welcome.html:13 app/templates/app/welcome.html.py:16
+#: app/templates/app/welcome.html:14 app/templates/app/welcome.html.py:17
 msgid "Login as"
 msgstr "התחבר כמשתמש"
 
-#: app/templates/app/welcome.html:16
+#: app/templates/app/welcome.html:17
 msgid "New User"
 msgstr "חדש"
 
 #: messages/admin.py:13 messages/models.py:52
-#: messages/templates/messages/outbox.html:10
 #: messages/templates/messages/view.html:15
 msgid "Recipient"
 msgstr "נמען"
@@ -197,9 +197,6 @@ msgid "The following usernames are incorrect: %(users)s"
 msgstr ""
 
 #: messages/forms.py:20 messages/models.py:49
-#: messages/templates/messages/inbox.html:10
-#: messages/templates/messages/outbox.html:10
-#: messages/templates/messages/trash.html:10
 #: messages/templates/messages/view.html:9
 msgid "Subject"
 msgstr "נושא"
@@ -256,9 +253,7 @@ msgstr "הודעה שוחזרה"
 msgid "you have undelete a message"
 msgstr "שיחזרת הודעה"
 
-#: messages/models.py:51 messages/templates/messages/inbox.html:10
-#: messages/templates/messages/trash.html:10
-#: messages/templates/messages/view.html:11
+#: messages/models.py:51 messages/templates/messages/view.html:11
 msgid "Sender"
 msgstr "שולח"
 
@@ -325,46 +320,37 @@ msgstr "הודעה נמחקה בהצלחה"
 msgid "Message successfully recovered."
 msgstr "הודעה שוחזרה בהצלחה"
 
-#: messages/templates/messages/base.html:9
-#: messages/templates/messages/outbox.html:4
-#: messages/templates/messages/outbox.html:7
-msgid "Sent Messages"
-msgstr "הודעות יוצאות"
-
-#: messages/templates/messages/base.html:10
-msgid "New Message"
-msgstr "הודעה חדשה"
-
 #: messages/templates/messages/compose.html:4
 #: messages/templates/messages/compose.html:8
 msgid "Compose Message"
 msgstr "הודעה חדשה"
 
+#: messages/templates/messages/compose.html:10
+msgid "Recipients"
+msgstr "נמענים"
+
 #: messages/templates/messages/compose.html:17
 msgid "Send"
 msgstr "שלח"
 
-#: messages/templates/messages/inbox.html:10
-msgid "Received"
-msgstr "נתקבלה"
-
-#: messages/templates/messages/inbox.html:10
-#: messages/templates/messages/outbox.html:10
-#: messages/templates/messages/trash.html:10
-msgid "Action"
-msgstr "פעולה"
-
 #: messages/templates/messages/inbox.html:22
-#: messages/templates/messages/outbox.html:19
-#: messages/templates/messages/trash.html:19
+#: messages/templates/messages/messages_list.html:22
+#: messages/templates/messages/outbox.html:18
+#: messages/templates/messages/trash.html:18
 #: messages/templates/messages/view.html:14
 msgid "DATETIME_FORMAT"
 msgstr ""
 
 #: messages/templates/messages/inbox.html:23
-#: messages/templates/messages/outbox.html:20
+#: messages/templates/messages/messages_list.html:23
+#: messages/templates/messages/outbox.html:19
 msgid "delete"
 msgstr "מחק"
+
+#: messages/templates/messages/inbox.html:30
+#: messages/templates/messages/messages_list.html:30
+msgid "There are no messages in your Inbox"
+msgstr ""
 
 #: messages/templates/messages/new_message.html:1
 #, python-format
@@ -386,30 +372,36 @@ msgstr ""
 msgid "Reply"
 msgstr "מענה"
 
+#: messages/templates/messages/outbox.html:4
+#: messages/templates/messages/outbox.html:7
+msgid "Sent Messages"
+msgstr "הודעות יוצאות"
+
+#: messages/templates/messages/outbox.html:26
+msgid "There are no messages in your Outbox"
+msgstr ""
+
 #: messages/templates/messages/trash.html:4
 #: messages/templates/messages/trash.html:7
 msgid "Deleted Messages"
 msgstr "הודעות שנמחקו"
 
-#: messages/templates/messages/trash.html:10
-#: messages/templates/messages/view.html:13
-msgid "Date"
-msgstr "תאריך"
-
-#: messages/templates/messages/trash.html:20
+#: messages/templates/messages/trash.html:19
 msgid "undelete"
 msgstr "שחזר"
 
 #: messages/templates/messages/trash.html:26
-msgid ""
-"Deleted Messages are removed from the trash at unregular intervals, don't "
-"rely on this feature for long-time storage."
-msgstr "האשפה מתרוקנת מדי פעםאל תסמכו עליה לאחסון"
+msgid "There are no messages in your Trash"
+msgstr ""
 
 #: messages/templates/messages/view.html:4
 #: messages/templates/messages/view.html:7
 msgid "View Message"
 msgstr "פתח הודעה"
+
+#: messages/templates/messages/view.html:13
+msgid "Date"
+msgstr "תאריך"
 
 #: messages/templates/messages/view.html:27
 msgid "Public"
@@ -460,6 +452,20 @@ msgid ""
 "You have sent the message <a href=\"%(message_url)s\">%(message)s</a> to %"
 "(message_recipient)s."
 msgstr ""
+
+#~ msgid "New Message"
+#~ msgstr "הודעה חדשה"
+
+#~ msgid "Received"
+#~ msgstr "נתקבלה"
+
+#~ msgid "Action"
+#~ msgstr "פעולה"
+
+#~ msgid ""
+#~ "Deleted Messages are removed from the trash at unregular intervals, don't "
+#~ "rely on this feature for long-time storage."
+#~ msgstr "האשפה מתרוקנת מדי פעםאל תסמכו עליה לאחסון"
 
 #~ msgid "Update preferences"
 #~ msgstr "עדכן העדפות"
