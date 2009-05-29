@@ -41,8 +41,9 @@ def rylogin(request, token):
             except KeyError:
                 pass
             user.save()
+            return recipients(request, '/messages/compose/')
         request.session['django_language']=user.language
-        return recipients(request, '/messages/compose/')
+        return recipients(request, '/messages/inbox/')
     else:
         return HttpResponseRedirect('/welcome/')
 
