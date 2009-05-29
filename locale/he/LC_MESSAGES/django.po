@@ -345,7 +345,7 @@ msgstr "מחק"
 
 #: messages/templates/messages/inbox.html:30
 msgid "There are no messages in your Inbox"
-msgstr ""
+msgstr "אין הודעות בתיבת הדואר הנכנס"
 
 #: messages/templates/messages/new_message.html:1
 #, python-format
@@ -374,7 +374,7 @@ msgstr "הודעות יוצאות"
 
 #: messages/templates/messages/outbox.html:26
 msgid "There are no messages in your Outbox"
-msgstr ""
+msgstr "אין הודעות בתיבת הדואר היוצא"
 
 #: messages/templates/messages/trash.html:4
 #: messages/templates/messages/trash.html:7
@@ -387,7 +387,7 @@ msgstr "שחזר"
 
 #: messages/templates/messages/trash.html:26
 msgid "There are no messages in your Trash"
-msgstr ""
+msgstr "אין הודעות בפח האשפה"
 
 #: messages/templates/messages/view.html:4
 #: messages/templates/messages/view.html:7
