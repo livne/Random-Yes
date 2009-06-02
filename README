@@ -1,14 +1,32 @@
-#!/bin/sh
-sudo apt-get install geoip-bin python-geoip
-# web server has to give REMOTE_ADDR (non default for nginx)
+Random Yes
+==========
 
-# languages and countries:
-# http://www.mobilefish.com/tutorials/country_language_codes/countrylanguagecodes.html
-# http://www.mobilefish.com/tutorials/languagecodes/languagecodes.html
+License - AGPL-3.0
+http://randomyes.com
 
-sudo apt-get install gettext
+A simple way to communicate to a random person bypassing language barriers.
 
-cd ~/django/django_projects/randomyes
-django-admin.py makemessages -a
-django-admin.py compilemessages
+RandomYes is a django web application that enables direct communication with 
+random people across languages.
+Creating a new user is just clicking "new" button.
+A new user gets an instant identity based on her GeoIP (proper random name is 
+chosen), and Inbox, with interface in the local language.
+The first page a new user gets is Compose, and it contains already few random
+recipients, and a suggested message. User can press "send" button and wait 
+for replies or new contacts.
+Viewing a messages gets automatically translated (thnx to google translate)
+to the user's language.
+User can change preferences like country, language, name, etc in Preferences 
+page. Changing a country gives a random name.
 
+Messaging engine is heavily based on django-messages 0.4.1 
+http://code.google.com/p/django-messages/ - Thanx!
+
+It runs well with mysql+nginx+runfcgi on a 20$/Month VPS from
+Slicehost (referal: http://tinyurl.com/djangopro)
+
+Written by Shahar Livne <github@livne.co.il> May 2009.
+Checked with django r10788 (2009-05-15), before git upload.
+
+May it creates new bridges for humanity.
+May you get a random yes :-)
