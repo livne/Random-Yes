@@ -9,7 +9,7 @@
 
 <div class="recipients">
 <ul>{% trans "Recipients" %}<a href="/recipients/"><img src="/MEDIA/img/actions/png/reload.png" width="16" height="16" border="0" title="Update recipients" alt="update"></a><br>{% for recipient in user.recipients.all %}<img src="/MEDIA/img/flags/png/{{ recipient.country }}.png"/> 
-{{ recipient }} <img src="/MEDIA/img/status/png/karma-{{ user.karma }}-mini.png" alt="{% trans "Karma" %}" title="{% trans "Karma: " %} {{ user.karma }}"><br>{% endfor %}</ul>
+{{ recipient }} <img src="/MEDIA/img/status/png/karma-{{ recipient.karma }}-mini.png" alt="{% trans "Karma" %}" title="{% trans "Karma: " %} {{ recipient.karma }}"><br>{% endfor %}</ul>
 </div>
 <form action="" method="post">
 <table>
